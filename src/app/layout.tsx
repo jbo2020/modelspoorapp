@@ -7,11 +7,16 @@ export const metadata: Metadata = {
   title: "Modelspoor Collectie",
   description: "Persoonlijk beheer van een Zwitserse modelspoorverzameling.",
   manifest: "/manifest.json",
-  icons: [{ rel: "icon", url: "/icons/icon.svg", type: "image/svg+xml" }],
+  icons: [
+    { rel: "icon", url: "/icons/icon.svg", type: "image/svg+xml" },
+    { rel: "icon", url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
+    { rel: "icon", url: "/icons/icon-512.png", type: "image/png", sizes: "512x512" },
+    { rel: "apple-touch-icon", url: "/icons/icon-180.png", sizes: "180x180" },
+  ],
   appleWebApp: {
     capable: true,
     title: "Modelspoor",
-    statusBarStyle: "default",
+    statusBarStyle: "black-translucent",
   },
 };
 
@@ -19,6 +24,7 @@ export const viewport: Viewport = {
   themeColor: "#D0091F",
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default async function RootLayout({
@@ -31,10 +37,10 @@ export default async function RootLayout({
     <html lang="nl">
       <body className="min-h-screen flex flex-col">
         {session?.user && <Nav email={session.user.email ?? ""} />}
-        <main className="flex-1 w-full max-w-app mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <main className="flex-1 w-full max-w-app mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-24 sm:pb-6">
           {children}
         </main>
-        <footer className="border-t border-line py-4 text-xs text-muted text-center">
+        <footer className="border-t border-line py-4 text-xs text-muted text-center hidden sm:block">
           Modelspoor Collectie · Fase 1
         </footer>
       </body>

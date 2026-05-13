@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { signOut } from "@/lib/auth";
+import BottomNav from "./BottomNav";
 
 export default function Nav({ email }: { email: string }) {
   return (
@@ -29,20 +30,7 @@ export default function Nav({ email }: { email: string }) {
           </form>
         </div>
       </div>
-      <nav className="sm:hidden fixed bottom-0 inset-x-0 z-20 bg-white border-t border-line h-14 grid grid-cols-4 text-xs">
-        <Link className="flex flex-col items-center justify-center gap-0.5" href="/">
-          <span>📚</span>Collectie
-        </Link>
-        <Link className="flex flex-col items-center justify-center gap-0.5" href="/wensenlijst">
-          <span>★</span>Wensen
-        </Link>
-        <Link className="flex flex-col items-center justify-center gap-0.5" href="/treffers">
-          <span>◎</span>Treffers
-        </Link>
-        <Link className="flex flex-col items-center justify-center gap-0.5" href="/instellingen">
-          <span>⚙</span>Instel
-        </Link>
-      </nav>
+      <BottomNav />
     </header>
   );
 }

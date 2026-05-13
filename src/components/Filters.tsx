@@ -46,17 +46,27 @@ export default function Filters({ merken, maatschappijen, totaal }: Props) {
   const maat = sp.get("maat") ?? "";
   const tp = sp.get("tp") ?? "";
 
+  const activeCount = [cat, merk, maat, tp].filter(Boolean).length;
+
   return (
     <aside className="card p-4 space-y-4 lg:sticky lg:top-4 lg:self-start">
       <div>
         <label className="label">Zoeken</label>
         <input
           className="input"
+          type="search"
+          inputMode="search"
           placeholder="Merk, art.nr., type, trein, …"
           value={q}
           onChange={(e) => setQ(e.target.value)}
         />
       </div>
+      <details className="filters-disclosure">
+        <summary className="lg:hidden flex items-center justify-between gap-2 cursor-pointer select-none rounded-md px-3 py-2 text-sm font-medium border border-line bg-white">
+          <span>Filters{activeCount > 0 ? ` · ${activeCount} actief` : ""}</span>
+          <span aria-hidden className="text-muted">▾</span>
+        </summary>
+        <div className="space-y-4 mt-4 lg:mt-0">
       <div>
         <label className="label">Categorie</label>
         <select
@@ -128,6 +138,8 @@ export default function Filters({ merken, maatschappijen, totaal }: Props) {
           ))}
         </div>
       </div>
+        </div>
+      </details>
       <p className="text-xs text-muted pt-2 border-t border-line">
         {totaal} {totaal === 1 ? "item" : "items"} gevonden
       </p>
