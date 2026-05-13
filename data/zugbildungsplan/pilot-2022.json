@@ -1,0 +1,520 @@
+[
+  {
+    "signatuur": "1927ddcbfe893df4::T:ice 4 apmzf08120@1||T:ice 4 apmz18120@1||T:ice 4 apmz14120@1||T:ice 4 armz88120@1/2||T:ice 4 bpmbsz64120@2||T:ice 4 bpmz98120@2||T:ice 4 bpmz24120@2||T:ice 4 bpmz24123@2||T:ice 4 bpmz48120@2||T:ice 4 bpmz24125@2||T:ice 4 bpmz24128@2||T:ice 4 bpmdzf58120@2",
+    "omschrijving": null,
+    "aantalPosities": 12,
+    "lokSerie": null,
+    "totaalKlasse": "1+1/2+2",
+    "eersteBron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+    "posities": [
+      {
+        "positie": 0,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Apmzf0812.0",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 1,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Apmz1812.0",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 2,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Apmz1412.0",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 3,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 ARmz8812.0",
+        "vereistKlasse": "1/2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 4,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmbsz6412.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 5,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz9812.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 6,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 7,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.3",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 8,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz4812.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 9,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.5",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 10,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.8",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 11,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmdzf5812.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      }
+    ],
+    "treindiensten": [
+      {
+        "treinnummer": "3",
+        "jaar": 2022,
+        "routeVan": "Karlsruhe Hbf",
+        "routeNaar": "Zürich HB",
+        "dienstdagen": null,
+        "maatschappij": "DB",
+        "bron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+        "notities": "Verkehrt nur an (onvolledig vermeld in bron)."
+      }
+    ]
+  },
+  {
+    "signatuur": "ccf4a2263b97e971::T:ice 4 bpmdzf58120@2||T:ice 4 bpmz24128@2||T:ice 4 bpmz24125@2||T:ice 4 bpmz48120@2||T:ice 4 bpmz24123@2||T:ice 4 bpmz24120@2||T:ice 4 bpmz98120@2||T:ice 4 bpmbsz64120@2||T:ice 4 armz88120@1/2||T:ice 4 apmz14120@1||T:ice 4 apmz18120@1||T:ice 4 apmzf08120@1",
+    "omschrijving": null,
+    "aantalPosities": 12,
+    "lokSerie": null,
+    "totaalKlasse": "1+1/2+2",
+    "eersteBron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+    "posities": [
+      {
+        "positie": 0,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmdzf5812.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 1,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.8",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 2,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.5",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 3,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz4812.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 4,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.3",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 5,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz2412.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 6,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmz9812.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 7,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Bpmbsz6412.0",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 8,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 ARmz8812.0",
+        "vereistKlasse": "1/2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 9,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Apmz1412.0",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 10,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Apmz1812.0",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 11,
+        "vereistCategorie": "TREINSTEL",
+        "vereistSerie": "ICE 4 Apmzf0812.0",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      }
+    ],
+    "treindiensten": [
+      {
+        "treinnummer": "ICE 4",
+        "jaar": 2022,
+        "routeVan": "Zürich HB",
+        "routeNaar": "Frankfurt (Main) Hbf",
+        "dienstdagen": null,
+        "maatschappij": "DB",
+        "bron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+        "notities": "Verkehrt ab 02.04.2022 als ICE 4 13-teilig; nachts tot Frankfurt (Main) Hbf."
+      }
+    ]
+  },
+  {
+    "signatuur": "3665c16c23644449::L:re 460@||P:ec apm61@1||P:ec apm61@1||P:ew iv wrm61@||P:ec bpm61@2||P:ec bpm61@2||P:ec bpm61@2||P:ew iv bt@",
+    "omschrijving": null,
+    "aantalPosities": 8,
+    "lokSerie": "Re 460",
+    "totaalKlasse": "1+2",
+    "eersteBron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+    "posities": [
+      {
+        "positie": 0,
+        "vereistCategorie": "LOCOMOTIEF",
+        "vereistSerie": "Re 460",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 1,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 2,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 3,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EW IV WRm61",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": "Restauratiewagen"
+      },
+      {
+        "positie": 4,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 5,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 6,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 7,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EW IV Bt",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": "Stuurstandrijtuig"
+      }
+    ],
+    "treindiensten": [
+      {
+        "treinnummer": "7",
+        "jaar": 2022,
+        "routeVan": "Hamburg-Altona",
+        "routeNaar": "Interlaken Ost",
+        "dienstdagen": null,
+        "maatschappij": "SBB",
+        "bron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+        "notities": "Verkehrt nur ab Basel SBB."
+      }
+    ]
+  },
+  {
+    "signatuur": "e30bf625b04cf801::L:re 460@||P:ec bpm61@2||P:ec bpm61@2||P:ec bpm61@2||P:ec wrm61@||P:ec apm61@1||P:ec apm61/pano@1||P:ec apm61@1",
+    "omschrijving": null,
+    "aantalPosities": 8,
+    "lokSerie": "Re 460",
+    "totaalKlasse": "1+2",
+    "eersteBron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+    "posities": [
+      {
+        "positie": 0,
+        "vereistCategorie": "LOCOMOTIEF",
+        "vereistSerie": "Re 460",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 1,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 2,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 3,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 4,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC WRm61",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": "Restauratiewagen (EW IV WRm61)"
+      },
+      {
+        "positie": 5,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 6,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61/Pano",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": "Panoramawagen"
+      },
+      {
+        "positie": 7,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      }
+    ],
+    "treindiensten": [
+      {
+        "treinnummer": "8",
+        "jaar": 2022,
+        "routeVan": "Zürich HB",
+        "routeNaar": "Hamburg-Altona",
+        "dienstdagen": null,
+        "maatschappij": "SBB",
+        "bron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+        "notities": null
+      }
+    ]
+  },
+  {
+    "signatuur": "6dce4f6adbeaca92::L:re 460@||P:ec apm61@1||P:ec apm61@1||P:ec apm61@1||P:ew iv wrm61@||P:ec bpm61@2||P:ec bpm61@2||P:ec bpm61@2||P:ec bpm61@2||P:ec bpm61@2||P:ew iv bt@",
+    "omschrijving": null,
+    "aantalPosities": 11,
+    "lokSerie": "Re 460",
+    "totaalKlasse": "1+2",
+    "eersteBron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+    "posities": [
+      {
+        "positie": 0,
+        "vereistCategorie": "LOCOMOTIEF",
+        "vereistSerie": "Re 460",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 1,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 2,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 3,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Apm61",
+        "vereistKlasse": "1",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 4,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EW IV WRm61",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": "Restauratiewagen"
+      },
+      {
+        "positie": 5,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 6,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 7,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 8,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 9,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EC Bpm61",
+        "vereistKlasse": "2",
+        "vereistRijtuignummer": null,
+        "opmerking": null
+      },
+      {
+        "positie": 10,
+        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistSerie": "EW IV Bt",
+        "vereistKlasse": null,
+        "vereistRijtuignummer": null,
+        "opmerking": "Stuurstandrijtuig"
+      }
+    ],
+    "treindiensten": [
+      {
+        "treinnummer": "6",
+        "jaar": 2022,
+        "routeVan": "Interlaken Ost",
+        "routeNaar": "Hamburg-Altona",
+        "dienstdagen": null,
+        "maatschappij": "SBB",
+        "bron": "Röschus Zugbildungsplan Zugbildung_P_2022.txt",
+        "notities": "Verkehrt nur bis Basel SBB."
+      }
+    ]
+  }
+]

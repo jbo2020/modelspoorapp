@@ -146,6 +146,21 @@ Per blok schrijft het script één regel naar stdout. Mislukte extracties
 gaan naar `data/zugbildungsplan/.extract-fouten.log` met het ruwe
 LLM-antwoord erbij voor inspectie.
 
+### Pilot-resultaten delen zonder API-calls
+
+De pilot-data is gedumpt naar `data/zugbildungsplan/pilot-2022.json`
+(5 types, 5 treindiensten, 51 posities). Zo importeer je deze in je
+eigen lokale DB zonder zelf Anthropic-credits te gebruiken:
+
+```bash
+npm run db:push           # zorg dat het schema up-to-date is
+npm run sam:import        # leest pilot-2022.json en upsert idempotent
+```
+
+Tegenovergesteld: na een eigen pilot-run kun je je eigen state delen
+met `npm run sam:dump [outputpad]` (filter `SAM_DUMP_BRON=` past het
+bron-filter aan, default `Röschus`).
+
 **Status van de segmenter**: 14 van de 20 jaargangen segmenteren goed
 (≈9000 blokken totaal), de overige 6 hebben een andere block-marker
 (`Bemerkungen:` ipv `zurück zur Zugliste`, of een andere structuur in de

@@ -10,6 +10,8 @@
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "sam:load": "tsx scripts/load-samenstellingen.ts",
+    "sam:dump": "tsx scripts/dump-samenstellingen.ts",
+    "sam:import": "tsx scripts/import-samenstellingen-json.ts",
     "zug:pilot": "tsx scripts/extract-zugbildung.ts",
     "postinstall": "prisma generate"
   },
