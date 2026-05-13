@@ -1,0 +1,117 @@
+// Modelspoor Collectie — Prisma schema
+// SQLite voor lokale ontwikkeling; in productie PostgreSQL (Supabase/Neon).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ---- Auth ----------------------------------------------------------------
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  passwordHash  String
+  name          String?
+  createdAt     DateTime @default(now())
+
+  items    Item[]
+  wishlist WishlistItem[]
+}
+
+// ---- Collectie -----------------------------------------------------------
+// Categorie: LOCOMOTIEF | PERSONENRIJTUIG | GOEDERENWAGON | SMALSPOOR | TREINSTEL
+// Status:    IN_BEZIT | VERKOCHT
+// (SQLite kent geen enum-type; in TypeScript afgedwongen via lib/types.ts)
+
+model Item {
+  id              String     @id @default(cuid())
+  userId          String
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  categorie       String
+  merk            String
+  artikelnummer   String?
+  typeAanduiding  String?
+  maatschappij    String?
+  schaal          String?     // H0, N, H0m, ...
+  tijdperk        String?     // I, II, III, IV, V, VI, IV/V, V/VI
+  aanschafprijs   Float?
+  huidigeWaarde   Float?
+  aankoopdatum    DateTime?
+  aantal          Int        @default(1)
+  set             Boolean    @default(false)
+  trein           String?
+  status          String     @default("IN_BEZIT")
+  notities        String?
+
+  loc             LocomotiefDetail?
+  personen        PersonenrijtuigDetail?
+  goederen        GoederenwagonDetail?
+  smal            SmalspoorDetail?
+  treinstel       TreinstelDetail?
+
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  @@index([userId, categorie])
+  @@index([userId, merk])
+  @@index([userId, maatschappij])
+}
+
+model LocomotiefDetail {
+  itemId        String  @id
+  item          Item    @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  loknummer     String?
+  kopstaart     String? // bv "Affoltern am Albis", "TEE", "Cargo"
+}
+
+model PersonenrijtuigDetail {
+  itemId      String  @id
+  item        Item    @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  soort       String? // zitrijtuig, couchette, slaaprijtuig, restauratie, panorama, stuurstand, bagage, post
+  wagennummer String? // UIC, bv "61 85 20-90 235-3"
+}
+
+model GoederenwagonDetail {
+  itemId       String  @id
+  item         Item    @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  wagentype    String? // suiker, schuifwand, taschen, container, ketel, autotransport, zelflosser, gesloten, open, koel, post
+  wagennummer  String?
+  vasteTrein   String? // koppeling aan vaste samenstelling
+}
+
+model SmalspoorDetail {
+  itemId        String  @id
+  item          Item    @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  subcategorie  String? // loc, rijtuig, wagon
+  loknummer     String?
+  kopstaart     String?
+  wagennummer   String?
+}
+
+model TreinstelDetail {
+  itemId        String  @id
+  item          Item    @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  aantalDelen   Int?
+  decoderadres  Int?
+  stroomtype    String? // DC, AC, Digitaal, Analoog
+}
+
+// ---- Wensenlijst (stub voor Fase 2) -------------------------------------
+
+model WishlistItem {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  artikelnummer String?
+  merk          String?
+  omschrijving  String?
+  maxPrijs      Float?
+  prioriteit    Int      @default(0)
+  createdAt     DateTime @default(now())
+}
