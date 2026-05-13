@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { requireUserId } from "@/lib/auth";
+import { PageHeader } from "@/components/Frame";
 
 export const dynamic = "force-dynamic";
 
@@ -22,27 +23,24 @@ export default async function WensenlijstPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Wensenlijst</h1>
-          <p className="text-sm text-muted">
-            Items waar je naar zoekt. Actieve regels worden dagelijks
-            gecontroleerd op marktplaatsen.
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <Link href="/wensenlijst/import" className="btn">
-            Importeren
-          </Link>
-          <Link href="/wensenlijst/nieuw" className="btn-primary">
-            <span>＋</span> Nieuw
-          </Link>
-        </div>
-      </div>
+      <PageHeader
+        eyebrow="Daily search"
+        title="Wensenlijst"
+        actions={
+          <>
+            <Link href="/wensenlijst/import" className="btn">
+              Importeren
+            </Link>
+            <Link href="/wensenlijst/nieuw" className="btn-primary">
+              Nieuw
+            </Link>
+          </>
+        }
+      />
 
       {items.length === 0 ? (
-        <div className="card p-10 text-center">
-          <p className="text-muted">Nog niets op de wensenlijst.</p>
+        <div className="empty-state">
+          <p>Nog niets op de wensenlijst.</p>
           <div className="mt-4 flex justify-center gap-2">
             <Link href="/wensenlijst/nieuw" className="btn-primary">
               Eerste wens toevoegen

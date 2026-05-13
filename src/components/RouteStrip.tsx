@@ -1,25 +1,24 @@
-// Mooie route-balk voor de samenstellings-detailpagina. Toont
-// `routeVan → routeNaar` groot, met daaronder de maatschappij-chip en
-// eventuele dienstdagen. Geen kaart (overkill voor deze pilot) maar wel
-// een visueel duidelijke richtingstrip.
+// Route-strip — atelier-stijl: groot eindpunten-paar met dunne lijn ertussen,
+// monospaced treinnummer + maatschappij-chip + dienstdagen. Geen gradient,
+// geen ronde hoeken.
 
-const MIJ_KLEUR: Record<string, string> = {
-  SBB: "bg-sbb/10 text-sbb ring-sbb/30",
-  CFF: "bg-sbb/10 text-sbb ring-sbb/30",
-  FFS: "bg-sbb/10 text-sbb ring-sbb/30",
-  BLS: "bg-amber-100 text-amber-800 ring-amber-200",
-  SOB: "bg-amber-100 text-amber-800 ring-amber-200",
-  RhB: "bg-rose-100 text-rose-700 ring-rose-200",
-  MOB: "bg-blue-100 text-blue-700 ring-blue-200",
-  DB: "bg-rose-100 text-rose-800 ring-rose-200",
-  "ÖBB": "bg-rose-50 text-rose-900 ring-rose-200",
-  SNCF: "bg-sky-100 text-sky-700 ring-sky-200",
-  NS: "bg-yellow-100 text-yellow-800 ring-yellow-200",
+const MIJ_TINT: Record<string, string> = {
+  SBB: "bg-sbb/10 text-sbb border-sbb/30",
+  CFF: "bg-sbb/10 text-sbb border-sbb/30",
+  FFS: "bg-sbb/10 text-sbb border-sbb/30",
+  BLS: "bg-amber-100 text-amber-800 border-amber-200",
+  SOB: "bg-amber-100 text-amber-800 border-amber-200",
+  RhB: "bg-rose-100 text-rose-700 border-rose-200",
+  MOB: "bg-blue-100 text-blue-700 border-blue-200",
+  DB: "bg-rose-100 text-rose-800 border-rose-200",
+  "ÖBB": "bg-rose-50 text-rose-900 border-rose-200",
+  SNCF: "bg-sky-100 text-sky-700 border-sky-200",
+  NS: "bg-yellow-100 text-yellow-800 border-yellow-200",
 };
 
-function chipKlasse(mij?: string | null): string {
-  if (!mij) return "bg-paper text-muted ring-line";
-  return MIJ_KLEUR[mij] ?? "bg-paper text-muted ring-line";
+function tint(mij?: string | null): string {
+  if (!mij) return "bg-paper2 text-muted border-line";
+  return MIJ_TINT[mij] ?? "bg-paper2 text-muted border-line";
 }
 
 export type RouteStripProps = {
@@ -33,45 +32,65 @@ export type RouteStripProps = {
 };
 
 export default function RouteStrip(p: RouteStripProps) {
-  if (!p.routeVan && !p.routeNaar) {
-    return null;
-  }
+  if (!p.routeVan && !p.routeNaar) return null;
   return (
-    <div className="card p-5 bg-gradient-to-r from-paper to-white">
-      <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-wide text-muted mb-2">
+    <div className="panel">
+      <div className="flex items-center gap-3 flex-wrap mb-3">
         {p.treinnummer && (
-          <span className="font-semibold text-ink text-sm normal-case">
+          <span className="font-mono text-sm tracking-wide text-ink font-medium tabular">
             {p.treinnummer}
           </span>
         )}
-        {p.jaar && <span>· {p.jaar}</span>}
+        {p.jaar && (
+          <span className="font-mono text-[11px] text-muted tabular">
+            {p.jaar}
+          </span>
+        )}
         {p.maatschappij && (
-          <span className={`chip ring-1 ${chipKlasse(p.maatschappij)}`}>
+          <span className={`chip ${tint(p.maatschappij)}`}>
             {p.maatschappij}
           </span>
         )}
-        {p.dienstdagen && <span>· {p.dienstdagen}</span>}
+        {p.dienstdagen && (
+          <span className="text-[11px] text-muted">{p.dienstdagen}</span>
+        )}
       </div>
-      <div className="flex items-center gap-3 flex-wrap text-xl sm:text-2xl font-semibold tracking-tight">
-        <span>{p.routeVan ?? "?"}</span>
-        <svg
-          viewBox="0 0 24 24"
-          width="32"
-          height="32"
-          className="text-sbb shrink-0"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <line x1="3" y1="12" x2="19" y2="12" />
-          <polyline points="13 6 19 12 13 18" />
-        </svg>
-        <span>{p.routeNaar ?? "?"}</span>
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+        <div className="text-right">
+          <div className="eyebrow mb-1">van</div>
+          <div className="text-lg sm:text-xl font-medium leading-tight tracking-tight">
+            {p.routeVan ?? "—"}
+          </div>
+        </div>
+        <div className="flex flex-col items-center gap-1 px-2">
+          <span className="h-px w-20 bg-rule" />
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            className="text-sbb"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="3" y1="12" x2="20" y2="12" />
+            <polyline points="14 6 20 12 14 18" />
+          </svg>
+          <span className="h-px w-20 bg-rule" />
+        </div>
+        <div>
+          <div className="eyebrow mb-1">naar</div>
+          <div className="text-lg sm:text-xl font-medium leading-tight tracking-tight">
+            {p.routeNaar ?? "—"}
+          </div>
+        </div>
       </div>
       {p.bron && (
-        <div className="mt-2 text-xs text-muted truncate">Bron: {p.bron}</div>
+        <div className="mt-3 pt-3 border-t border-line text-[11px] text-muted truncate">
+          {p.bron}
+        </div>
       )}
     </div>
   );

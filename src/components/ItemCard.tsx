@@ -16,33 +16,40 @@ type Props = {
 };
 
 export default function ItemCard(p: Props) {
-  const title =
-    [p.merk, p.typeAanduiding].filter(Boolean).join(" — ") || p.merk;
   return (
     <Link
       href={`/collectie/${p.id}`}
-      className="card card-hover p-3 group block"
+      className="card card-hover block group"
     >
-      <div className="flex items-start gap-3">
+      <div className="flex items-stretch gap-3 p-3.5">
         <SerieImage
           serie={p.typeAanduiding ?? null}
           categorie={p.categorie}
           size="sm"
         />
-        <div className="min-w-0 flex-1">
-          <div className="eyebrow">
-            {CATEGORIE_LABEL[p.categorie]}
-            {p.aantal && p.aantal > 1 ? ` · ${p.aantal}×` : ""}
-          </div>
-          <div className="font-medium truncate">{title}</div>
-          {p.artikelnummer && (
-            <div className="text-xs text-muted">art. {p.artikelnummer}</div>
-          )}
-          <div className="mt-2 flex items-center gap-1.5 text-xs flex-wrap">
-            {p.maatschappij && (
-              <span className="chip bg-paper text-muted ring-line">
-                {p.maatschappij}
+        <div className="min-w-0 flex-1 flex flex-col">
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="eyebrow">{CATEGORIE_LABEL[p.categorie]}</span>
+            {p.aantal && p.aantal > 1 && (
+              <span className="text-[11px] font-mono text-muted tabular">
+                {p.aantal}×
               </span>
+            )}
+          </div>
+          <div className="font-medium truncate text-[15px] leading-tight mt-1">
+            {p.merk}
+          </div>
+          {p.typeAanduiding && (
+            <div className="text-xs text-ink2 truncate">{p.typeAanduiding}</div>
+          )}
+          {p.artikelnummer && (
+            <div className="text-[11px] text-muted font-mono tabular mt-1">
+              art. {p.artikelnummer}
+            </div>
+          )}
+          <div className="mt-auto pt-2.5 flex items-center gap-1.5 flex-wrap">
+            {p.maatschappij && (
+              <span className="chip-paper">{p.maatschappij}</span>
             )}
             <TijdperkBadge tijdperk={p.tijdperk} />
           </div>

@@ -1,13 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
+import Frame from "@/components/Frame";
 import { auth } from "@/lib/auth";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-inter",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -35,15 +41,13 @@ export default async function RootLayout({
 }) {
   const session = await auth();
   return (
-    <html lang="nl" className={inter.variable}>
-      <body className="min-h-screen flex flex-col font-sans">
-        {session?.user && <Nav email={session.user.email ?? ""} />}
-        <main className="flex-1 w-full max-w-app mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          {children}
-        </main>
-        <footer className="border-t border-line py-4 text-xs text-muted text-center">
-          Modelspoor Collectie · Fase 1
-        </footer>
+    <html lang="nl" className={`${inter.variable} ${mono.variable}`}>
+      <body className="min-h-screen flex bg-paper text-ink font-sans">
+        {session?.user ? (
+          <Frame email={session.user.email ?? ""}>{children}</Frame>
+        ) : (
+          <div className="flex-1">{children}</div>
+        )}
       </body>
     </html>
   );

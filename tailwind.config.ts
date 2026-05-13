@@ -5,12 +5,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#FAF8F5",
-        ink: "#1F2125",
-        muted: "#6B6E73",
-        line: "#E5E1DA",
+        // Surfaces — warmed cream, technical archive feel
+        paper: "#F4EEE2",
+        paper2: "#EBE3D2",
+        surface: "#FFFFFF",
+        ink: "#16181C",
+        ink2: "#3C3D42",
+        muted: "#807A6F",
+        faint: "#B5AC9C",
+        line: "#E1D9C8",
+        rule: "#D6CCB7",
+
+        // Accent + status
         sbb: "#D0091F",
-        sbbDim: "#A8071A",
+        sbbDim: "#A50817",
+        accentGreen: "#1F7A4D",
+        accentYellow: "#B57E0E",
+
         dark: {
           bg: "#1A1A1C",
           surface: "#222226",
@@ -18,29 +29,43 @@ const config: Config = {
           muted: "#9A9AA0",
           line: "#2C2C30",
         },
+
+        // Era band (Zwitserse tijdperken) — versterkte palette
         era: {
-          1: "#8B6F47",
-          2: "#A07A4F",
+          1: "#7B5E3A",
+          2: "#9A7544",
           3: "#B58A57",
-          4: "#7E8E94",
-          5: "#5B7A8B",
-          6: "#3F6B83",
+          4: "#6E7E84",
+          5: "#48708A",
+          6: "#2E5F7F",
         },
       },
       fontFamily: {
         sans: [
+          '"Helvetica Neue"',
+          "Helvetica",
           "var(--font-inter)",
           "Inter",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
           "Segoe UI",
-          "Helvetica",
           "Arial",
           "sans-serif",
         ],
+        mono: [
+          "var(--font-mono)",
+          '"JetBrains Mono"',
+          '"IBM Plex Mono"',
+          "ui-monospace",
+          "Menlo",
+          "monospace",
+        ],
       },
-      maxWidth: { app: "1280px" },
+      maxWidth: { app: "1320px" },
+      letterSpacing: {
+        eyebrow: "0.16em",
+      },
     },
   },
   plugins: [],

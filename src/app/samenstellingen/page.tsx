@@ -2,6 +2,8 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { requireUserId } from "@/lib/auth";
 import SamenstellingStrip from "@/components/SamenstellingStrip";
+import { PageHeader } from "@/components/Frame";
+import { treinTitel } from "@/lib/samenstelling/titel";
 import type { Prisma } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
@@ -37,8 +39,7 @@ export default async function SamenstellingenPage({
         posities: { orderBy: { positie: "asc" } },
         treindiensten: { orderBy: [{ jaar: "desc" }, { treinnummer: "asc" }] },
       },
-      orderBy: [{ lokSerie: "asc" }, { aantalPosities: "asc" }],
-      take: 200,
+      take: 500,
     }),
     prisma.treindienst.findMany({
       distinct: ["maatschappij"],
@@ -66,22 +67,31 @@ export default async function SamenstellingenPage({
 
   const gematchteIds = new Set(mijnMatches.map((m) => m.positieId));
 
+  // Sorteer: samenstellingen waarvan de gebruiker de meeste posities al heeft → eerst.
+  // Ties op aantal gematcht; daarna op aantalPosities desc; daarna alfabetisch op lokSerie.
+  const verrijkt = types.map((t) => {
+    const matched = t.posities.filter((p) => gematchteIds.has(p.id)).length;
+    return { ...t, matched };
+  });
+  verrijkt.sort((a, b) => {
+    if (b.matched !== a.matched) return b.matched - a.matched;
+    if (b.aantalPosities !== a.aantalPosities) return b.aantalPosities - a.aantalPosities;
+    return (a.lokSerie ?? "").localeCompare(b.lokSerie ?? "");
+  });
+
   return (
     <div>
-      <div className="flex items-center justify-between mb-4 gap-4 flex-wrap">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Samenstellingen</h1>
-          <p className="text-sm text-muted">
-            Echte treinsamenstellingen. Klik door om je collectie tegen een
-            samenstelling te leggen.
-          </p>
-        </div>
-        <span className="text-xs text-muted">
-          {types.length} {types.length === 1 ? "type" : "types"}
-        </span>
-      </div>
+      <PageHeader
+        eyebrow="Treinsamenstellingen"
+        title="Samenstellingen"
+        actions={
+          <span className="font-mono text-xs text-muted tabular">
+            {verrijkt.length} type{verrijkt.length === 1 ? "" : "s"}
+          </span>
+        }
+      />
 
-      <form className="card p-3 mb-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <form className="card p-4 mb-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
         <label className="text-xs">
           <span className="label">Zoek</span>
           <input
@@ -131,66 +141,65 @@ export default async function SamenstellingenPage({
         </div>
       </form>
 
-      {types.length === 0 ? (
-        <div className="card p-10 text-center text-sm text-muted">
+      {verrijkt.length === 0 ? (
+        <div className="empty-state">
           Nog geen samenstellingen geladen. Plaats .txt-bestanden in{" "}
-          <code>samenstellingen/</code> en draai <code>npm run sam:load</code>.
-          Zie <code>docs/samenstellingen-format.md</code>.
+          <code className="font-mono text-ink">samenstellingen/</code> of draai{" "}
+          <code className="font-mono text-ink">npm run zug:pilot -- --file ... --all</code>.
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {types.map((t) => {
-            const gematcht = t.posities.filter((p) => gematchteIds.has(p.id)).length;
+          {verrijkt.map((t) => {
+            const dienst = t.treindiensten[0];
+            const titel = treinTitel(dienst, t);
+            const dekking = t.matched / t.aantalPosities;
+            const dekkingTint =
+              dekking === 1 ? "text-accentGreen" :
+              dekking >= 0.5 ? "text-accentYellow" :
+              t.matched > 0 ? "text-sbb" :
+              "text-muted";
             return (
               <Link
                 key={t.id}
                 href={`/samenstellingen/${t.id}`}
-                className="card p-4 hover:border-sbb/30 transition block"
+                className="card card-hover block"
               >
-                <div className="flex items-center justify-between mb-2 gap-2">
-                  <div>
-                    <div className="font-semibold">
-                      {t.lokSerie ?? "—"}
-                      {t.omschrijving && (
-                        <span className="text-muted font-normal">
-                          {" "}· {t.omschrijving}
-                        </span>
-                      )}
+                <div className="p-4 flex items-start justify-between gap-3 border-b border-line">
+                  <div className="min-w-0">
+                    <div className="eyebrow mb-1">{t.lokSerie ?? "—"} · {t.aantalPosities} posities</div>
+                    <div className="font-medium text-[15px] leading-tight truncate">
+                      {titel}
                     </div>
-                    <div className="text-xs text-muted">
-                      {t.aantalPosities} posities
-                      {t.totaalKlasse && ` · ${t.totaalKlasse}`}
-                      {" · "}
-                      <span
-                        className={
-                          gematcht === t.aantalPosities
-                            ? "text-sbb"
-                            : "text-muted"
-                        }
-                      >
-                        {gematcht}/{t.aantalPosities} gematcht
-                      </span>
-                    </div>
+                    {dienst && (dienst.routeVan || dienst.routeNaar) && (
+                      <div className="text-[12px] text-ink2 mt-1 truncate">
+                        {dienst.routeVan ?? "?"} → {dienst.routeNaar ?? "?"}
+                      </div>
+                    )}
                   </div>
-                  <span className="chip bg-paper text-muted ring-line">
-                    {t.treindiensten.length}{" "}
-                    {t.treindiensten.length === 1 ? "trein" : "treinen"}
-                  </span>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-base tabular leading-none ${dekkingTint}`}>
+                      {t.matched}
+                      <span className="text-muted">/{t.aantalPosities}</span>
+                    </div>
+                    <div className="eyebrow mt-1">in collectie</div>
+                  </div>
                 </div>
-                <SamenstellingStrip
-                  posities={t.posities.map((p) => ({
-                    id: p.id,
-                    positie: p.positie,
-                    vereistCategorie: p.vereistCategorie,
-                    vereistSerie: p.vereistSerie,
-                    gematcht: gematchteIds.has(p.id),
-                  }))}
-                />
-                <div className="text-xs text-muted mt-2 truncate">
+                <div className="p-2">
+                  <SamenstellingStrip
+                    posities={t.posities.map((p) => ({
+                      id: p.id,
+                      positie: p.positie,
+                      vereistCategorie: p.vereistCategorie,
+                      vereistSerie: p.vereistSerie,
+                      gematcht: gematchteIds.has(p.id),
+                    }))}
+                  />
+                </div>
+                <div className="px-4 py-2 border-t border-line text-[11px] text-muted flex items-center gap-2 flex-wrap font-mono tabular">
                   {t.treindiensten.slice(0, 4).map((d) => (
-                    <span key={d.id} className="mr-2">
+                    <span key={d.id}>
                       {d.treinnummer}
-                      {d.jaar ? ` (${d.jaar})` : ""}
+                      {d.jaar ? ` ${d.jaar}` : ""}
                     </span>
                   ))}
                   {t.treindiensten.length > 4 && (

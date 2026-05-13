@@ -5,6 +5,7 @@ import Filters from "@/components/Filters";
 import type { Categorie } from "@/lib/types";
 import { isCategorie } from "@/lib/types";
 import Link from "next/link";
+import { PageHeader } from "@/components/Frame";
 import type { Prisma } from "@prisma/client";
 
 export const dynamic = "force-dynamic";
@@ -58,28 +59,27 @@ export default async function HomePage({
   ]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
-      <Filters
-        merken={allMerken.map((m) => m.merk)}
-        maatschappijen={allMaat.map((m) => m.maatschappij!).filter(Boolean)}
-        totaal={items.length}
-      />
-      <section>
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-2xl font-semibold tracking-tight">Collectie</h1>
-            <p className="text-sm text-muted">
-              Bladeren, zoeken en beheren van je modelspoorverzameling.
-            </p>
-          </div>
+    <div>
+      <PageHeader
+        eyebrow="Overzicht"
+        title="Collectie"
+        actions={
           <Link href="/collectie/nieuw" className="btn-primary">
-            <span>＋</span> Nieuw item
+            Nieuw item
           </Link>
-        </div>
+        }
+      />
 
+      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
+        <Filters
+          merken={allMerken.map((m) => m.merk)}
+          maatschappijen={allMaat.map((m) => m.maatschappij!).filter(Boolean)}
+          totaal={items.length}
+        />
+        <section>
         {items.length === 0 ? (
-          <div className="card p-10 text-center">
-            <p className="text-muted">Nog geen items in de collectie.</p>
+          <div className="empty-state">
+            <p>Nog geen items in de collectie.</p>
             <div className="mt-4 flex justify-center gap-2">
               <Link href="/collectie/nieuw" className="btn-primary">
                 Eerste item toevoegen
@@ -106,7 +106,8 @@ export default async function HomePage({
             ))}
           </div>
         )}
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

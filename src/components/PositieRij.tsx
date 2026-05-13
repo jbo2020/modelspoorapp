@@ -1,3 +1,7 @@
+// Positie-rij — ledger-stijl voor de samenstelling-detailpagina.
+// Twee kolommen: vereiste (links, mono-volgnummer + serie + klasse) en
+// match-status (rechts, item-link of "geen match" met actie-knoppen).
+
 import Link from "next/link";
 import SerieImage from "./SerieImage";
 import { CATEGORIE_LABEL, type Categorie } from "@/lib/types";
@@ -42,112 +46,118 @@ export default function PositieRij(props: {
   return (
     <div
       id={`pos-${positie}`}
-      className="p-4 grid grid-cols-1 sm:grid-cols-[64px_1fr_1fr_auto] gap-4 items-start"
+      className="grid grid-cols-1 md:grid-cols-[60px_72px_minmax(0,1.2fr)_minmax(0,1fr)_auto] gap-4 items-center p-4"
     >
+      <span className="font-mono text-[12px] text-muted tabular">
+        {String(positie).padStart(2, "0")}
+      </span>
+
       <SerieImage
         serie={vereistSerie}
         categorie={vereistCategorie as Categorie}
         size="sm"
       />
 
-      <div>
-        <div className="eyebrow">Positie {positie}</div>
-        <div className="font-medium">
+      <div className="min-w-0">
+        <div className="text-[13px] font-medium text-ink truncate">
           {vereistSerie ?? CATEGORIE_LABEL[vereistCategorie as Categorie]}
         </div>
-        <div className="text-xs text-muted">
+        <div className="text-[11px] text-muted">
           {CATEGORIE_LABEL[vereistCategorie as Categorie]}
           {vereistKlasse && ` · ${vereistKlasse}e klasse`}
-          {vereistRijtuignummer && ` · ${vereistRijtuignummer}`}
+          {vereistRijtuignummer && (
+            <>
+              {" · "}
+              <span className="font-mono tabular">{vereistRijtuignummer}</span>
+            </>
+          )}
         </div>
         {opmerking && (
-          <div className="text-xs text-muted italic mt-1">{opmerking}</div>
+          <div className="text-[11px] text-muted italic mt-1 truncate">
+            {opmerking}
+          </div>
         )}
       </div>
 
-      <div>
-        <div className="label">Match</div>
+      <div className="min-w-0">
         {match ? (
-          <div className="space-y-1">
-            <div className="flex items-center gap-2">
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
               <Link
                 href={`/collectie/${match.itemId}`}
-                className="text-sm font-medium hover:text-sbb"
+                className="text-[13px] font-medium hover:text-sbb truncate"
               >
                 {match.itemMerk}
                 {match.itemType && ` — ${match.itemType}`}
               </Link>
               {match.isAuto && (
-                <span className="chip bg-paper text-muted ring-line text-[10px]">
+                <span className="chip-ghost text-[10px] uppercase tracking-eyebrow">
                   auto
                 </span>
               )}
             </div>
             {match.itemArtikelnummer && (
-              <div className="text-xs text-muted">
+              <div className="text-[11px] text-muted font-mono tabular">
                 art. {match.itemArtikelnummer}
               </div>
             )}
-            <div className="flex flex-wrap items-center gap-1 pt-1">
-              <form
-                action={async () => {
-                  "use server";
-                  await clearMatchAction(positieId);
-                }}
-              >
-                <button className="chip ring-line bg-white text-muted hover:text-sbb">
-                  wis match
-                </button>
-              </form>
-              {alternatieven.length > 0 && (
-                <details className="text-xs">
-                  <summary className="cursor-pointer text-muted hover:text-ink">
-                    {alternatieven.length} alternatief
-                    {alternatieven.length === 1 ? "" : "ven"}
-                  </summary>
-                  <ul className="mt-1 space-y-1">
-                    {alternatieven.map((s) => (
-                      <li key={s.itemId} className="flex items-center gap-2">
-                        <form
-                          action={async () => {
-                            "use server";
-                            await setMatchAction(positieId, s.itemId);
-                          }}
-                        >
-                          <button className="chip ring-line bg-white hover:ring-sbb/40">
-                            kies
-                          </button>
-                        </form>
-                        <span className="truncate">
-                          {s.merk}
-                          {s.typeAanduiding && ` — ${s.typeAanduiding}`}
-                          <span className="text-muted ml-1">
-                            (score {s.score})
-                          </span>
+            {alternatieven.length > 0 && (
+              <details className="text-[11px] mt-1">
+                <summary className="cursor-pointer text-muted hover:text-ink">
+                  {alternatieven.length} alternatief
+                  {alternatieven.length === 1 ? "" : "ven"}
+                </summary>
+                <ul className="mt-1.5 space-y-1">
+                  {alternatieven.map((s) => (
+                    <li key={s.itemId} className="flex items-center gap-2">
+                      <form
+                        action={async () => {
+                          "use server";
+                          await setMatchAction(positieId, s.itemId);
+                        }}
+                      >
+                        <button className="chip-ghost hover:border-ink">
+                          kies
+                        </button>
+                      </form>
+                      <span className="truncate text-ink2">
+                        {s.merk}
+                        {s.typeAanduiding && ` — ${s.typeAanduiding}`}
+                        <span className="text-muted font-mono tabular ml-1.5 text-[10px]">
+                          {s.score}
                         </span>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              )}
-            </div>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           </div>
         ) : (
-          <p className="text-sm text-muted">Geen passende collectie-item.</p>
+          <span className="text-[12px] text-muted italic">
+            geen collectie-match
+          </span>
         )}
       </div>
 
-      <div>
-        {!match && (
+      <div className="flex flex-col items-end gap-1">
+        {match ? (
+          <form
+            action={async () => {
+              "use server";
+              await clearMatchAction(positieId);
+            }}
+          >
+            <button className="btn-ghost text-[11px]">wis</button>
+          </form>
+        ) : (
           <form
             action={async () => {
               "use server";
               await positieNaarWensenlijstAction(positieId);
             }}
           >
-            <button className="btn text-sm" title="Voeg toe aan wensenlijst">
-              → wensenlijst
-            </button>
+            <button className="btn text-[11px]">→ wensenlijst</button>
           </form>
         )}
       </div>

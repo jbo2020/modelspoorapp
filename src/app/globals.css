@@ -12,56 +12,126 @@ body {
   color: theme(colors.ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "cv11", "ss01", "ss03";
 }
 
 h1, h2, h3 {
-  letter-spacing: -0.015em;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+}
+
+/* Tabular numbers for the technical/ledger feel everywhere it matters. */
+.mono,
+.font-mono,
+.tabular {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
 }
 
 @layer components {
+  /* ---- Buttons ---- */
   .btn {
-    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium
-           border border-line bg-white hover:bg-paper transition-all duration-150
-           focus:outline-none focus:ring-2 focus:ring-sbb/30
-           hover:-translate-y-px hover:shadow-sm;
+    @apply inline-flex items-center gap-1.5 rounded-sm px-3 py-2 text-xs font-medium
+           border border-rule bg-white text-ink
+           hover:bg-paper2 transition-colors
+           focus:outline-none focus:ring-2 focus:ring-sbb/20;
+    letter-spacing: 0.01em;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium
-           bg-sbb text-white hover:bg-sbbDim transition-all duration-150
-           focus:outline-none focus:ring-2 focus:ring-sbb/40
-           hover:-translate-y-px shadow-sm hover:shadow;
+    @apply inline-flex items-center gap-1.5 rounded-sm px-3 py-2 text-xs font-medium
+           bg-sbb text-white border border-sbb
+           hover:bg-sbbDim transition-colors
+           focus:outline-none focus:ring-2 focus:ring-sbb/30;
   }
+  .btn-dark {
+    @apply inline-flex items-center gap-1.5 rounded-sm px-3 py-2 text-xs font-medium
+           bg-ink text-white border border-ink
+           hover:bg-ink2 transition-colors;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 px-2 py-1.5 text-xs font-medium
+           text-ink2 hover:text-ink transition-colors;
+  }
+
+  /* ---- Form fields — flat, hairline, technical ---- */
   .input {
-    @apply w-full rounded-md border border-line bg-white px-3 py-2 text-sm
-           text-ink placeholder:text-muted
-           focus:outline-none focus:ring-2 focus:ring-sbb/30 focus:border-sbb/40
-           transition-shadow;
+    @apply w-full rounded-none border border-line bg-white px-2.5 py-2 text-sm
+           text-ink placeholder:text-faint
+           focus:outline-none focus:border-ink focus:ring-0
+           transition-colors;
+  }
+  .input-mono {
+    @apply input font-mono tracking-wide;
   }
   .label {
-    @apply block text-[0.7rem] font-semibold uppercase tracking-wider text-muted mb-1;
+    @apply block uppercase tracking-eyebrow text-[10px] font-medium text-muted mb-1.5;
   }
+
+  /* ---- Surfaces ---- */
   .card {
-    @apply rounded-lg border border-line bg-white;
+    @apply bg-white border border-line;
   }
   .card-hover {
-    @apply transition-all duration-200
-           hover:border-sbb/30
-           hover:shadow-[0_4px_16px_rgba(208,9,31,0.06)]
-           hover:-translate-y-px;
+    @apply transition-colors hover:border-rule hover:bg-paper2/30;
   }
+  .panel {
+    @apply bg-white border border-line p-4;
+  }
+
+  /* ---- Chips ---- */
   .chip {
-    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs
-           ring-1 ring-inset;
+    @apply inline-flex items-center gap-1 px-2 py-1 text-[11px]
+           border border-line bg-white text-ink2
+           whitespace-nowrap;
+    letter-spacing: 0.02em;
   }
+  .chip-paper {
+    @apply chip bg-paper2 border-transparent;
+  }
+  .chip-mono {
+    @apply chip font-mono tracking-wide text-[11px];
+  }
+  .chip-red {
+    @apply chip bg-sbb/10 text-sbb border-sbb/30;
+  }
+  .chip-green {
+    @apply chip bg-accentGreen/10 text-accentGreen border-accentGreen/30;
+  }
+  .chip-ink {
+    @apply chip bg-ink text-white border-ink;
+  }
+  .chip-ghost {
+    @apply chip bg-transparent text-muted border-line;
+  }
+
+  /* ---- Type ---- */
   .eyebrow {
-    @apply text-[0.7rem] uppercase tracking-wider text-muted font-medium;
+    @apply uppercase tracking-eyebrow text-[10px] font-medium text-muted;
   }
+  .section-label {
+    @apply flex items-baseline justify-between gap-3
+           border-b border-rule pb-2 mb-3.5
+           uppercase tracking-eyebrow text-[10px] font-medium text-muted;
+  }
+
+  /* ---- Stat-cell ---- */
+  .stat {
+    @apply flex-1 min-w-0 px-4 py-3.5 border-r border-line last:border-r-0;
+  }
+  .stat-label {
+    @apply eyebrow mb-1.5 text-[10px];
+  }
+  .stat-value {
+    @apply font-mono text-2xl leading-none tabular text-ink font-medium;
+  }
+  .stat-sub {
+    @apply text-[11px] text-muted mt-1.5;
+  }
+
   .empty-state {
-    @apply rounded-lg border-2 border-dashed border-line bg-white/50
+    @apply border border-dashed border-rule bg-white/40
            p-10 text-center text-muted;
   }
   .skeleton {
-    @apply animate-pulse bg-line/60 rounded;
+    @apply animate-pulse bg-line/60;
   }
 }
