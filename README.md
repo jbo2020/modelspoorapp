@@ -121,11 +121,43 @@ Bestanden met dezelfde rake (loc-serie + rijtuigen in volgorde + klassen)
 worden onder hetzelfde `Samenstellingstype` gebundeld, met elke trein
 als afzonderlijke `Treindienst`.
 
+## Zugbildungspläne extraheren (Fase 5 — pilot)
+
+De bronbestanden van de Röschus Zugbildungspläne (jaargangen 1900–2022)
+staan in `data/zugbildungsplan/`. Het script `scripts/extract-zugbildung.ts`
+segmenteert per bestand de treinblokken (gescheiden door
+`zurück zur Zugliste`), stuurt elk blok naar Claude voor gestructureerde
+extractie, en upsert het resultaat via `loadSamenstelling()` in dezelfde
+tabellen die `npm run sam:load` gebruikt — dus mét ontdubbeling op
+signatuur.
+
+```bash
+# Dry-run: alleen segmenteren, geen LLM, geen DB. Geen API-key nodig.
+npm run zug:pilot -- --file data/zugbildungsplan/Zugbildung_P_2022.txt --dry-run
+
+# Pilot: eerste 5 blokken van 2022, vereist ANTHROPIC_API_KEY in .env.
+npm run zug:pilot -- --file data/zugbildungsplan/Zugbildung_P_2022.txt --limit 5
+
+# Hele bestand 2022 (≈1530 blokken, ±$5–10 met Sonnet 4.6).
+npm run zug:pilot -- --file data/zugbildungsplan/Zugbildung_P_2022.txt --all
+```
+
+Per blok schrijft het script één regel naar stdout. Mislukte extracties
+gaan naar `data/zugbildungsplan/.extract-fouten.log` met het ruwe
+LLM-antwoord erbij voor inspectie.
+
+**Status van de segmenter**: 14 van de 20 jaargangen segmenteren goed
+(≈9000 blokken totaal), de overige 6 hebben een andere block-marker
+(`Bemerkungen:` ipv `zurück zur Zugliste`, of een andere structuur in de
+oudere periode-overzichten 1900–1970/1970–1980). Aanpassing voor die
+clusters komt in een volgende iteratie — conform ontwerp §6: "verwacht
+per cluster van jaren een aparte parser".
+
 ## Volgende fases (nog niet geïmplementeerd)
 
-- Fase 5: Vision-LLM-extractie van Zugbildungsplan-PDF's, paginaclassificatie,
+- Fase 5 vervolg: segmenter-varianten voor de 6 andere layouts;
   normalisatietabel per rijtuigserie zodat kleine variaties (`Bpmz 295.1`
-  vs `Bpmz 295`) automatisch hetzelfde type krijgen, en eigen
-  samenstellings-uploads vanuit de webapp.
+  vs `Bpmz 295`) automatisch hetzelfde type krijgen; samenstellings-
+  uploads vanuit de webapp.
 - Fase 6: PWA-polish (offline cache, install prompt), donker thema,
   dashboards.
