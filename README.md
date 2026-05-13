@@ -50,6 +50,97 @@ npm run dev
 
 Open <http://localhost:3000>. Log in met de seed-credentials.
 
+## Testen
+
+Er is (nog) geen geautomatiseerd testframework geconfigureerd; testen
+gebeurt via build-/lintchecks plus handmatige smoke-tests in de browser.
+
+### Sanity-checks
+
+```bash
+npm run lint           # ESLint via next lint
+npm run build          # prisma generate + next build — vangt typefouten
+                       # en build-time errors af
+```
+
+Een schone `lint` en succesvolle `build` zijn een harde voorwaarde voor
+PR-merges.
+
+### Lokale testomgeving opzetten
+
+```bash
+cp .env.example .env   # vul AUTH_SECRET + SEED_USER_* in
+npm install
+npm run db:push        # vers SQLite-schema (./dev.db)
+npm run db:seed        # demo-gebruiker + voorbeelditems
+npm run dev            # http://localhost:3000
+```
+
+Reset tussen testruns: verwijder `dev.db` en draai `db:push` + `db:seed`
+opnieuw, zodat je vanuit een bekende staat begint.
+
+### Handmatige smoke-tests per fase
+
+**Fase 1 — Kerncollectie**
+
+1. Log in met de seed-credentials.
+2. Voeg per categorie (Locomotief, Personenrijtuig, Goederenwagon,
+   Smalspoor, Treinstel) één item toe en controleer dat de
+   categoriespecifieke velden verschijnen en worden opgeslagen.
+3. Bewerk en verwijder een item; controleer dat de detailtabel meegaat.
+4. Test de filters op categorie, merk, maatschappij en tijdperk en de
+   zoekbalk.
+5. Importeer een Excel-bestand via `/import`, zowel met automatische
+   als met handmatige kolomtoewijzing per tabblad.
+
+**Fase 2 — Wensenlijst + monitoring**
+
+1. Maak via `/wensen` een wensregel aan met prioriteit, maximumprijs,
+   actief-vlag en extra zoektermen; importeer er ook een uit Excel/CSV.
+2. eBay-connector: vul `EBAY_APP_ID` + `EBAY_CERT_ID` of laat leeg om de
+   stub-modus te testen.
+3. Marktplaats / 2dehands: leg een `.eml`- of `.txt`-meldingsmail in
+   `inbox/marktplaats/` resp. `inbox/tweedehands/`.
+4. Trigger een scan via de knop in de UI (`POST /api/scan`) of via
+   `curl "http://localhost:3000/api/scan?cron_secret=$CRON_SECRET"`.
+5. Controleer in het treffers-overzicht: filteren per status en
+   statuswisseling NIEUW → GEZIEN → GEKOCHT / AFGEWEZEN.
+6. Zonder `RESEND_API_KEY` logt e-mail naar de console — verifieer de
+   regels in de devserver-output.
+7. Web Push: genereer VAPID-keys (`npx web-push generate-vapid-keys`),
+   abonneer in de browser en draai een scan met nieuwe treffers.
+
+**Fase 3 — Foto-herkenning**
+
+1. Open `/foto` en upload een doosfoto.
+2. Met `ANTHROPIC_API_KEY` ingevuld: controleer dat OCR resultaten
+   geeft en het bevestigingsscherm een pre-filled `ItemForm` toont.
+3. Zonder API-key: controleer dat de upload-flow werkt en de gebruiker
+   handmatig kan invullen (stub-modus).
+4. Verifieer dat `tmp/fotos/` na ~1 uur wordt opgeruimd (of forceer
+   handmatig).
+
+### PWA / installeerbaarheid
+
+Bouw productie en serveer:
+
+```bash
+npm run build && npm start
+```
+
+Open Chrome DevTools → Application → Manifest + Service Workers en
+controleer of het manifest geldig is en de service worker registreert.
+Test de install-prompt op desktop en mobiel.
+
+### Cron-trigger testen
+
+```bash
+curl -i "http://localhost:3000/api/scan?cron_secret=$CRON_SECRET"
+```
+
+Verwacht `200 OK` mét correcte `cron_secret`, `401`/`403` zonder of bij
+een verkeerde waarde.
+
 ## Mappenstructuur
 
 ```
