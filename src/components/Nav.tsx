@@ -12,6 +12,7 @@ export default function Nav({ email }: { email: string }) {
         <nav className="hidden sm:flex items-center gap-4 text-sm text-muted">
           <Link className="hover:text-ink" href="/">Collectie</Link>
           <Link className="hover:text-ink" href="/foto">Foto</Link>
+          <Link className="hover:text-ink" href="/samenstellingen">Samenstellingen</Link>
           <Link className="hover:text-ink" href="/wensenlijst">Wensenlijst</Link>
           <Link className="hover:text-ink" href="/treffers">Treffers</Link>
           <Link className="hover:text-ink" href="/import">Import</Link>

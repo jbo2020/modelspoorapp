@@ -1,0 +1,14 @@
+Treinnummer: IC 707
+Jaar: 2024
+Route-van: Genève
+Route-naar: Sankt Gallen
+Maatschappij: SBB
+Bron: Zugbildungsplan SBB 2024, p. 142
+Omschrijving: IC EW IV-stam Genève–SG
+
+loc | Re 460 |    | 460 044-1 |
+pos | EW IV A | 1 |            |
+pos | EW IV B | 2 |            |
+pos | EW IV B | 2 |            |
+pos | EW IV B | 2 |            |
+pos | EW IV B Bt | 2 |         | stuurstandrijtuig

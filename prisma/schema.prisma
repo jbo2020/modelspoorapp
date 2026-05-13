@@ -24,6 +24,7 @@ model User {
   treffers          MarktplaatsTreffer[]
   pushSubscriptions PushSubscription[]
   connectorStates   ConnectorState[]
+  samenstellingMatches SamenstellingMatch[]
 }
 
 // ---- Collectie -----------------------------------------------------------
@@ -176,4 +177,75 @@ model ConnectorState {
   laatsteExternId String?
 
   @@unique([userId, bron])
+}
+
+// ---- Treinsamenstellingen (Fase 4) --------------------------------------
+//
+// Een Samenstellingstype is een unieke rake (loc-serie + rijtuigen in
+// volgorde + klassen, genormaliseerd in `signatuur`). Meerdere
+// Treindienst-rijen kunnen aan hetzelfde type hangen — zelfde rake, ander
+// treinnummer of andere jaargang.
+//
+// Categorie en klasse zijn strings (zoals elders in het schema, omdat
+// SQLite geen enums kent).
+
+model Samenstellingstype {
+  id             String   @id @default(cuid())
+  signatuur      String   @unique
+  omschrijving   String?
+  aantalPosities Int
+  lokSerie       String?
+  totaalKlasse   String?
+  eersteBron     String?
+  createdAt      DateTime @default(now())
+
+  posities       SamenstellingPositie[]
+  treindiensten  Treindienst[]
+}
+
+model SamenstellingPositie {
+  id                   String  @id @default(cuid())
+  typeId               String
+  type                 Samenstellingstype @relation(fields: [typeId], references: [id], onDelete: Cascade)
+  positie              Int
+  vereistCategorie     String
+  vereistSerie         String?
+  vereistKlasse        String?
+  vereistRijtuignummer String?
+  opmerking            String?
+
+  matches              SamenstellingMatch[]
+
+  @@unique([typeId, positie])
+}
+
+model Treindienst {
+  id           String  @id @default(cuid())
+  typeId       String
+  type         Samenstellingstype @relation(fields: [typeId], references: [id], onDelete: Cascade)
+  treinnummer  String
+  jaar         Int?
+  routeVan     String?
+  routeNaar    String?
+  dienstdagen  String?
+  maatschappij String?
+  bron         String?
+  notities     String?
+
+  @@index([treinnummer])
+  @@index([jaar])
+}
+
+model SamenstellingMatch {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  positieId       String
+  positie         SamenstellingPositie @relation(fields: [positieId], references: [id], onDelete: Cascade)
+  itemId          String
+  accuratesseNote String?
+  createdAt       DateTime @default(now())
+
+  @@unique([userId, positieId])
+  @@index([itemId])
 }

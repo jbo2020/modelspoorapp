@@ -1,0 +1,14 @@
+Treinnummer: EN 466
+Jaar: 2024
+Route-van: Zürich HB
+Route-naar: Wien Hbf
+Maatschappij: ÖBB
+Dienstdagen: dagelijks
+Bron: Nachtjet
+Omschrijving: Wiener Walzer NJ
+
+loc | Re 460 |    | |
+pos:p | WLABmz | | |
+pos:p | WLAmz |  | |
+pos:p | Bcmz   | 2 | |
+pos:p | Bmz    | 2 | |

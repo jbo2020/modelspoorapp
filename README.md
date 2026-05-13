@@ -5,8 +5,8 @@ Persoonlijke beheerapplicatie voor een Zwitserse modelspoorverzameling
 het volledige technisch ontwerp.
 
 Deze repository implementeert **Fase 1 — Kerncollectie**,
-**Fase 2 — Wensenlijst + eerste monitoring** en
-**Fase 3 — Foto-herkenning**:
+**Fase 2 — Wensenlijst + eerste monitoring**, **Fase 3 — Foto-herkenning** en
+**Fase 4 — Treinsamenstellingen (pilot)**:
 
 - Next.js 14 (App Router) + TypeScript + Tailwind
 - Prisma + SQLite (lokaal); in productie PostgreSQL
@@ -36,6 +36,13 @@ Deze repository implementeert **Fase 1 — Kerncollectie**,
   hfkern.de (configureerbaar) en eBay-titels, bevestigingsscherm met
   pre-filled ItemForm. Zonder `ANTHROPIC_API_KEY` werkt de UI maar
   vindt OCR niets — de gebruiker vult dan handmatig in
+- Treinsamenstellingen op `/samenstellingen`: laad TXT-bestanden
+  (formaat: `docs/samenstellingen-format.md`) met loc + rijtuigen +
+  klassen, met automatische ontdubbeling op signatuur — dezelfde rake
+  onder verschillende treinnummers krijgt één `Samenstellingstype`
+  met meerdere `Treindienst`-rijen. Per positie vergelijking met de
+  eigen collectie (categorie+schaal hard, serie/klasse/UIC gescoord),
+  match-suggesties, en "→ wensenlijst"-knop voor ontbrekende posities
 
 ## Aan de slag
 
@@ -100,9 +107,25 @@ willekeurige string in `.env` en moet overeenkomen met de querystring.
 Een productie-implementatie vervangt de mailbox-folder door een echte
 IMAP-client.
 
+## Samenstellingen laden (Fase 4)
+
+Plaats `.txt`-bestanden in `samenstellingen/` (formaatspec in
+`docs/samenstellingen-format.md`) en draai:
+
+```bash
+npm run sam:load
+```
+
+Het script is idempotent: opnieuw draaien voegt geen duplicates toe.
+Bestanden met dezelfde rake (loc-serie + rijtuigen in volgorde + klassen)
+worden onder hetzelfde `Samenstellingstype` gebundeld, met elke trein
+als afzonderlijke `Treindienst`.
+
 ## Volgende fases (nog niet geïmplementeerd)
 
-- Fase 4-5: Treinsamenstellingen (Zugbildungspläne) extraheren en matchen
-  tegen de collectie.
+- Fase 5: Vision-LLM-extractie van Zugbildungsplan-PDF's, paginaclassificatie,
+  normalisatietabel per rijtuigserie zodat kleine variaties (`Bpmz 295.1`
+  vs `Bpmz 295`) automatisch hetzelfde type krijgen, en eigen
+  samenstellings-uploads vanuit de webapp.
 - Fase 6: PWA-polish (offline cache, install prompt), donker thema,
   dashboards.

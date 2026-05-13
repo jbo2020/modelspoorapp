@@ -9,6 +9,7 @@
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
+    "sam:load": "tsx scripts/load-samenstellingen.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

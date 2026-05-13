@@ -1,0 +1,13 @@
+Treinnummer: IC 712
+Jaar: 2024
+Route-van: Sankt Gallen
+Route-naar: Genève
+Maatschappij: SBB
+Bron: Zugbildungsplan SBB 2024, p. 142
+
+loc | Re 460 |    | 460 057-3 |
+pos | EW IV A | 1 |            |
+pos | EW IV B | 2 |            |
+pos | EW IV B | 2 |            |
+pos | EW IV B | 2 |            |
+pos | EW IV B Bt | 2 |         |
