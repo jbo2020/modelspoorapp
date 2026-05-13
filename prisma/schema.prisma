@@ -249,3 +249,22 @@ model SamenstellingMatch {
   @@unique([userId, positieId])
   @@index([itemId])
 }
+
+// ---- Serie-afbeeldingen (Fase 6) ----------------------------------------
+//
+// Cache van Wikipedia-Commons thumbnails per loc-/rijtuig-serie. Gedeelde
+// reference data (geen userId). Negatieve resultaten worden ook gecached
+// (imageUrl = null + fout) zodat we Wikipedia niet bij elke render opnieuw
+// raken voor series die geen hit hebben.
+
+model SerieImage {
+  serie       String   @id            // genormaliseerde key, bv "re-460"
+  rauweInput  String                  // de oorspronkelijke serie-string
+  imageUrl    String?
+  thumbUrl    String?
+  caption     String?
+  source      String?                 // url naar Wikipedia-artikel
+  language    String?                 // "nl" | "de" | "en"
+  fetchedAt   DateTime @default(now())
+  fout        String?                 // laatste fout, bij negatieve cache
+}

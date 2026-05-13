@@ -1,7 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import { auth } from "@/lib/auth";
+
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Modelspoor Collectie",
@@ -28,8 +35,8 @@ export default async function RootLayout({
 }) {
   const session = await auth();
   return (
-    <html lang="nl">
-      <body className="min-h-screen flex flex-col">
+    <html lang="nl" className={inter.variable}>
+      <body className="min-h-screen flex flex-col font-sans">
         {session?.user && <Nav email={session.user.email ?? ""} />}
         <main className="flex-1 w-full max-w-app mx-auto px-4 sm:px-6 lg:px-8 py-6">
           {children}

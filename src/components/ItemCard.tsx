@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CategoryIcon } from "./Icons";
+import SerieImage from "./SerieImage";
 import TijdperkBadge from "./TijdperkBadge";
 import type { Categorie } from "@/lib/types";
 import { CATEGORIE_LABEL } from "@/lib/types";
@@ -21,14 +21,16 @@ export default function ItemCard(p: Props) {
   return (
     <Link
       href={`/collectie/${p.id}`}
-      className="card p-4 hover:border-sbb/30 hover:shadow-sm transition group block"
+      className="card card-hover p-3 group block"
     >
       <div className="flex items-start gap-3">
-        <div className="shrink-0 text-ink/80 group-hover:text-sbb transition-colors">
-          <CategoryIcon categorie={p.categorie} size={22} />
-        </div>
+        <SerieImage
+          serie={p.typeAanduiding ?? null}
+          categorie={p.categorie}
+          size="sm"
+        />
         <div className="min-w-0 flex-1">
-          <div className="text-xs uppercase tracking-wide text-muted">
+          <div className="eyebrow">
             {CATEGORIE_LABEL[p.categorie]}
             {p.aantal && p.aantal > 1 ? ` · ${p.aantal}×` : ""}
           </div>
@@ -36,13 +38,15 @@ export default function ItemCard(p: Props) {
           {p.artikelnummer && (
             <div className="text-xs text-muted">art. {p.artikelnummer}</div>
           )}
+          <div className="mt-2 flex items-center gap-1.5 text-xs flex-wrap">
+            {p.maatschappij && (
+              <span className="chip bg-paper text-muted ring-line">
+                {p.maatschappij}
+              </span>
+            )}
+            <TijdperkBadge tijdperk={p.tijdperk} />
+          </div>
         </div>
-      </div>
-      <div className="mt-3 flex items-center gap-2 text-xs flex-wrap">
-        {p.maatschappij && (
-          <span className="chip bg-paper text-muted ring-line">{p.maatschappij}</span>
-        )}
-        <TijdperkBadge tijdperk={p.tijdperk} />
       </div>
     </Link>
   );

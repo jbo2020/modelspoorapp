@@ -10,6 +10,9 @@ import {
   SMALSPOOR_SUB,
   type Categorie,
 } from "@/lib/types";
+import LookupKnop from "./LookupKnop";
+
+const FORM_ID = "item-form";
 
 type Detail = {
   loknummer?: string | null;
@@ -54,7 +57,7 @@ export default function ItemForm({
   const [cat, setCat] = useState<Categorie>(initial?.categorie ?? "LOCOMOTIEF");
 
   return (
-    <form action={action} className="space-y-6">
+    <form id={FORM_ID} action={action} className="space-y-6">
       <div className="card p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="label">Categorie</label>
@@ -99,6 +102,9 @@ export default function ItemForm({
             className="input"
             defaultValue={initial?.artikelnummer ?? ""}
           />
+        </div>
+        <div className="sm:col-span-2">
+          <LookupKnop formId={FORM_ID} />
         </div>
         <div className="sm:col-span-2">
           <label className="label">Type-aanduiding</label>

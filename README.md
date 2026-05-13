@@ -168,6 +168,26 @@ oudere periode-overzichten 1900–1970/1970–1980). Aanpassing voor die
 clusters komt in een volgende iteratie — conform ontwerp §6: "verwacht
 per cluster van jaren een aparte parser".
 
+## Polish-update (Fase 6)
+
+- **Direction-onafhankelijke signatuur** in `src/lib/samenstelling/signatuur.ts`:
+  een rake en zijn omkering vormen één Samenstellingstype. Na een schema-
+  of code-update draai eenmalig:
+  ```bash
+  npx tsx scripts/resync-signaturen.ts
+  ```
+  Dit script ontdubbelt bestaande types en verplaatst hun Treindiensten en
+  matches naar de samengevoegde winnaar. Idempotent.
+- **Wikipedia-thumbnails per serie** via `src/lib/series-images/`. Cache
+  ligt in de DB-tabel `SerieImage` (14-dagen TTL voor hits, 1-dag voor
+  misses). Eerste paginalaad doet de fetches; daarna is alles cache-hit.
+- **Auto-matching**: `autoMatchVoorTypeAction` vult bij elke render van een
+  samenstelling-detail de ontbrekende matches in (score-drempel > 1).
+  Handmatige keuzes blijven; "wis match" om iets te verwijderen.
+- **`Zoek online`-knop in ItemForm** hergebruikt `runLookups()` uit de
+  foto-pipeline: typ je merk + artikelnummer en de knop vult lege velden
+  met wat de adapters (Märklin / Roco / hfkern / eBay) vinden.
+
 ## Volgende fases (nog niet geïmplementeerd)
 
 - Fase 5 vervolg: segmenter-varianten voor de 6 andere layouts;
