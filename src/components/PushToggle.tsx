@@ -17,13 +17,24 @@ export default function PushToggle() {
   const [enabled, setEnabled] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [iosNeedsInstall, setIosNeedsInstall] = useState(false);
 
   useEffect(() => {
-    const ok =
-      typeof window !== "undefined" &&
-      "serviceWorker" in navigator &&
-      "PushManager" in window;
+    if (typeof window === "undefined") return;
+    const ok = "serviceWorker" in navigator && "PushManager" in window;
     setSupported(ok);
+    // iOS Safari only allows Web Push when the PWA is installed to the home
+    // screen and running in standalone display mode.
+    const ua = navigator.userAgent || "";
+    const isIos = /iPad|iPhone|iPod/.test(ua) ||
+      (navigator.platform === "MacIntel" && (navigator as Navigator & { maxTouchPoints?: number }).maxTouchPoints! > 1);
+    const standalone =
+      window.matchMedia?.("(display-mode: standalone)").matches ||
+      (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
+    if (isIos && !standalone) {
+      setIosNeedsInstall(true);
+      return;
+    }
     if (!ok) return;
     navigator.serviceWorker.register("/sw.js").then(async (reg) => {
       const sub = await reg.pushManager.getSubscription();
@@ -90,6 +101,19 @@ export default function PushToggle() {
     }
   }
 
+  if (iosNeedsInstall) {
+    return (
+      <div className="rounded-md border border-line bg-paper p-3 text-sm space-y-1">
+        <p className="font-medium">Eerst de app installeren</p>
+        <p className="text-muted">
+          Op iPhone werken push-meldingen alleen als deze app op je beginscherm
+          staat. Tik in Safari op het deel-icoon{" "}
+          <span aria-hidden>􀈂</span> en kies “Zet op beginscherm”. Open de app
+          daarna vanaf je beginscherm en kom hier terug.
+        </p>
+      </div>
+    );
+  }
   if (!supported) {
     return (
       <p className="text-xs text-muted">

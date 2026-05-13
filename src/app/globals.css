@@ -12,6 +12,28 @@ body {
   color: theme(colors.ink);
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "cv11", "ss01";
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Prevent iOS Safari from zooming on input focus (requires >= 16px). */
+input, select, textarea {
+  font-size: 16px;
+}
+@media (min-width: 640px) {
+  input, select, textarea {
+    font-size: inherit;
+  }
+}
+
+/* Always expand the mobile filter <details> on desktop, regardless of open state. */
+@media (min-width: 1024px) {
+  details.filters-disclosure > summary {
+    display: none;
+  }
+  details.filters-disclosure > *:not(summary) {
+    display: block !important;
+  }
 }
 
 /* Inter via system fallback; users with Inter installed get it. */

@@ -97,6 +97,10 @@ export default function ItemForm({
           <input
             name="artikelnummer"
             className="input"
+            inputMode="numeric"
+            autoComplete="off"
+            autoCapitalize="characters"
+            spellCheck={false}
             defaultValue={initial?.artikelnummer ?? ""}
           />
         </div>
@@ -166,6 +170,10 @@ export default function ItemForm({
               <input
                 name="loknummer"
                 className="input"
+                inputMode="numeric"
+                autoComplete="off"
+                spellCheck={false}
+                placeholder="bv. 460 075-5"
                 defaultValue={initial?.loknummer ?? ""}
               />
             </div>
@@ -203,6 +211,9 @@ export default function ItemForm({
               <input
                 name="wagennummer"
                 className="input"
+                inputMode="numeric"
+                autoComplete="off"
+                spellCheck={false}
                 defaultValue={initial?.wagennummer ?? ""}
                 placeholder="bv. 61 85 20-90 235-3"
               />
@@ -232,6 +243,9 @@ export default function ItemForm({
               <input
                 name="wagennummer"
                 className="input"
+                inputMode="numeric"
+                autoComplete="off"
+                spellCheck={false}
                 defaultValue={initial?.wagennummer ?? ""}
               />
             </div>
@@ -269,6 +283,9 @@ export default function ItemForm({
               <input
                 name="loknummer"
                 className="input"
+                inputMode="numeric"
+                autoComplete="off"
+                spellCheck={false}
                 defaultValue={initial?.loknummer ?? ""}
               />
             </div>
@@ -285,6 +302,9 @@ export default function ItemForm({
               <input
                 name="wagennummer"
                 className="input"
+                inputMode="numeric"
+                autoComplete="off"
+                spellCheck={false}
                 defaultValue={initial?.wagennummer ?? ""}
               />
             </div>
@@ -332,6 +352,7 @@ export default function ItemForm({
           <input
             name="aanschafprijs"
             type="number"
+            inputMode="decimal"
             step="0.01"
             min="0"
             className="input"
@@ -343,6 +364,7 @@ export default function ItemForm({
           <input
             name="huidigeWaarde"
             type="number"
+            inputMode="decimal"
             step="0.01"
             min="0"
             className="input"

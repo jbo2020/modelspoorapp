@@ -72,9 +72,17 @@ export default async function HomePage({
               Bladeren, zoeken en beheren van je modelspoorverzameling.
             </p>
           </div>
-          <Link href="/collectie/nieuw" className="btn-primary">
-            <span>＋</span> Nieuw item
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/import" className="btn" title="Excel importeren">
+              <span aria-hidden>⇪</span>
+              <span className="hidden sm:inline">Import</span>
+            </Link>
+            <Link href="/collectie/nieuw" className="btn-primary">
+              <span aria-hidden>＋</span>
+              <span className="hidden sm:inline">Nieuw item</span>
+              <span className="sm:hidden">Nieuw</span>
+            </Link>
+          </div>
         </div>
 
         {items.length === 0 ? (
