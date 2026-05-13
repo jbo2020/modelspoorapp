@@ -19,8 +19,11 @@ model User {
   name          String?
   createdAt     DateTime @default(now())
 
-  items    Item[]
-  wishlist WishlistItem[]
+  items             Item[]
+  wishlist          WishlistItem[]
+  treffers          MarktplaatsTreffer[]
+  pushSubscriptions PushSubscription[]
+  connectorStates   ConnectorState[]
 }
 
 // ---- Collectie -----------------------------------------------------------
@@ -113,5 +116,64 @@ model WishlistItem {
   omschrijving  String?
   maxPrijs      Float?
   prioriteit    Int      @default(0)
+  zoektermen    String?  // komma-gescheiden extra zoektermen voor connectors
+  actief        Boolean  @default(true)
+  notities      String?
   createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  treffers      MarktplaatsTreffer[]
+
+  @@index([userId, actief])
+}
+
+// Status: NIEUW | GEZIEN | GEKOCHT | AFGEWEZEN
+model MarktplaatsTreffer {
+  id              String       @id @default(cuid())
+  userId          String
+  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wishlistItemId  String?
+  wishlistItem    WishlistItem? @relation(fields: [wishlistItemId], references: [id], onDelete: SetNull)
+
+  bron            String       // EBAY | MARKTPLAATS_MAIL | TWEEDEHANDS_MAIL | CATAWIKI_RSS
+  externId        String       // unieke id binnen de bron (eBay item id, mail id, ...)
+  titel           String
+  url             String
+  prijs           Float?
+  valuta          String?      @default("EUR")
+  thumbnailUrl    String?
+  beschrijving    String?
+  vondsttijdstip  DateTime     @default(now())
+  status          String       @default("NIEUW")
+  gemeldOm        DateTime?
+
+  @@unique([userId, bron, externId])
+  @@index([userId, status])
+  @@index([userId, vondsttijdstip])
+}
+
+model PushSubscription {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  endpoint  String   @unique
+  p256dh    String
+  authKey   String
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// Per (userId, bron) één rij met de laatste scanstatus.
+model ConnectorState {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bron          String
+  laatsteScan   DateTime?
+  laatsteFout   String?
+  laatsteExternId String?
+
+  @@unique([userId, bron])
 }

@@ -1,0 +1,19 @@
+{
+  "name": "Modelspoor Collectie",
+  "short_name": "Modelspoor",
+  "description": "Beheer van een Zwitserse modelspoorverzameling.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#D0091F",
+  "lang": "nl",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

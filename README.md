@@ -4,7 +4,8 @@ Persoonlijke beheerapplicatie voor een Zwitserse modelspoorverzameling
 (SBB en gerelateerd materieel). Zie [`docs/ontwerp.md`](docs/ontwerp.md) voor
 het volledige technisch ontwerp.
 
-Deze repository implementeert **Fase 1 — Kerncollectie**:
+Deze repository implementeert **Fase 1 — Kerncollectie** en
+**Fase 2 — Wensenlijst + eerste monitoring**:
 
 - Next.js 14 (App Router) + TypeScript + Tailwind
 - Prisma + SQLite (lokaal); in productie PostgreSQL
@@ -15,6 +16,20 @@ Deze repository implementeert **Fase 1 — Kerncollectie**:
 - Zoeken en filteren op categorie, merk, maatschappij, tijdperk
 - Excel-import met automatische én handmatige kolomtoewijzing per tabblad
 - Inline SVG-iconenset per type, tijdperk-kleurmarkers
+- Wensenlijst-CRUD met prioriteit, maximumprijs, actief-vlag en extra
+  zoektermen; importeerbaar uit Excel of CSV
+- Connector-framework voor marktplaatsmonitoring met drie implementaties:
+  - **eBay** via de officiële Browse API (OAuth client-credentials)
+  - **Marktplaats** en **2dehands** via een lokale mailbox-folder waarop
+    de meldingsmails van hun zoekopdracht-functie binnenkomen — binnen
+    de algemene-voorwaarden-grens (zie ontwerpdoc §5)
+- `POST /api/scan` voor handmatige scan vanuit de UI; `GET /api/scan?cron_secret=...`
+  voor de dagelijkse cron-trigger door een externe scheduler
+- Treffers-overzicht met status (NIEUW / GEZIEN / GEKOCHT / AFGEWEZEN),
+  filteren per status, statuswisseling per regel
+- E-mailmeldingen via Resend (stubt naar console zonder API-key)
+- Web Push met VAPID; PWA-manifest en service worker voor installeerbare
+  app op desktop en telefoon
 
 ## Aan de slag
 
@@ -57,12 +72,33 @@ detailtabellen die via `itemId` koppelen — Prisma `LocomotiefDetail`,
 de geldige waarden zijn afgedwongen in `src/lib/types.ts` en in de Zod-
 schema's in `src/lib/items.ts`.
 
+## Externe scheduler instellen (dagelijkse scan)
+
+```
+0 7 * * *  curl -s "https://<host>/api/scan?cron_secret=$CRON_SECRET" > /dev/null
+```
+
+Of via Vercel Cron / GitHub Actions / Inngest. `CRON_SECRET` is een
+willekeurige string in `.env` en moet overeenkomen met de querystring.
+
+## Marktplaats / 2dehands meldingsmails
+
+1. Maak op marktplaats.nl resp. 2dehands.be een zoekopdracht aan en zet
+   *zoekopdracht-met-e-mailmelding* aan.
+2. Laat die meldingsmails binnenkomen op een mailbox.
+3. Sla de mails op als `.eml` of `.txt` in `inbox/marktplaats/` of
+   `inbox/tweedehands/` (instelbaar via `INBOX_ROOT`).
+4. Bij de eerstvolgende scan worden de mails geparseerd en als
+   treffers opgeslagen. Verwerkte mails verhuizen naar `inbox/<bron>/.verwerkt/`.
+
+Een productie-implementatie vervangt de mailbox-folder door een echte
+IMAP-client.
+
 ## Volgende fases (nog niet geïmplementeerd)
 
-- Fase 2: Wensenlijst + dagelijkse marktplaatsmonitoring (eBay API,
-  e-mailmeldingen voor Marktplaats/2dehands).
 - Fase 3: Foto-naar-artikelnummer (OCR + lookup tegen
   Märklin/Roco/hfkern.de).
 - Fase 4-5: Treinsamenstellingen (Zugbildungspläne) extraheren en matchen
   tegen de collectie.
-- Fase 6: PWA-polish, donker thema, dashboards.
+- Fase 6: PWA-polish (offline cache, install prompt), donker thema,
+  dashboards.

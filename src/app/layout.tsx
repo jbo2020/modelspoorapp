@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import { auth } from "@/lib/auth";
@@ -6,6 +6,19 @@ import { auth } from "@/lib/auth";
 export const metadata: Metadata = {
   title: "Modelspoor Collectie",
   description: "Persoonlijk beheer van een Zwitserse modelspoorverzameling.",
+  manifest: "/manifest.json",
+  icons: [{ rel: "icon", url: "/icons/icon.svg", type: "image/svg+xml" }],
+  appleWebApp: {
+    capable: true,
+    title: "Modelspoor",
+    statusBarStyle: "default",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#D0091F",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default async function RootLayout({

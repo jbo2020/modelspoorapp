@@ -11,8 +11,10 @@ export default function Nav({ email }: { email: string }) {
         </Link>
         <nav className="hidden sm:flex items-center gap-4 text-sm text-muted">
           <Link className="hover:text-ink" href="/">Collectie</Link>
-          <Link className="hover:text-ink" href="/collectie/nieuw">Toevoegen</Link>
+          <Link className="hover:text-ink" href="/wensenlijst">Wensenlijst</Link>
+          <Link className="hover:text-ink" href="/treffers">Treffers</Link>
           <Link className="hover:text-ink" href="/import">Import</Link>
+          <Link className="hover:text-ink" href="/instellingen">Instellingen</Link>
         </nav>
         <div className="ml-auto flex items-center gap-3 text-sm">
           <span className="text-muted hidden sm:inline">{email}</span>
@@ -26,16 +28,18 @@ export default function Nav({ email }: { email: string }) {
           </form>
         </div>
       </div>
-      {/* Mobile bottom nav */}
-      <nav className="sm:hidden fixed bottom-0 inset-x-0 z-20 bg-white border-t border-line h-14 grid grid-cols-3 text-xs">
+      <nav className="sm:hidden fixed bottom-0 inset-x-0 z-20 bg-white border-t border-line h-14 grid grid-cols-4 text-xs">
         <Link className="flex flex-col items-center justify-center gap-0.5" href="/">
           <span>📚</span>Collectie
         </Link>
-        <Link className="flex flex-col items-center justify-center gap-0.5" href="/collectie/nieuw">
-          <span>＋</span>Toevoegen
+        <Link className="flex flex-col items-center justify-center gap-0.5" href="/wensenlijst">
+          <span>★</span>Wensen
         </Link>
-        <Link className="flex flex-col items-center justify-center gap-0.5" href="/import">
-          <span>⤓</span>Import
+        <Link className="flex flex-col items-center justify-center gap-0.5" href="/treffers">
+          <span>◎</span>Treffers
+        </Link>
+        <Link className="flex flex-col items-center justify-center gap-0.5" href="/instellingen">
+          <span>⚙</span>Instel
         </Link>
       </nav>
     </header>
