@@ -9,6 +9,7 @@ dist
 prisma/dev.db
 prisma/dev.db-journal
 inbox/
+tmp/
 .DS_Store
 .vercel
 next-env.d.ts

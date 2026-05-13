@@ -4,8 +4,9 @@ Persoonlijke beheerapplicatie voor een Zwitserse modelspoorverzameling
 (SBB en gerelateerd materieel). Zie [`docs/ontwerp.md`](docs/ontwerp.md) voor
 het volledige technisch ontwerp.
 
-Deze repository implementeert **Fase 1 — Kerncollectie** en
-**Fase 2 — Wensenlijst + eerste monitoring**:
+Deze repository implementeert **Fase 1 — Kerncollectie**,
+**Fase 2 — Wensenlijst + eerste monitoring** en
+**Fase 3 — Foto-herkenning**:
 
 - Next.js 14 (App Router) + TypeScript + Tailwind
 - Prisma + SQLite (lokaal); in productie PostgreSQL
@@ -30,6 +31,11 @@ Deze repository implementeert **Fase 1 — Kerncollectie** en
 - E-mailmeldingen via Resend (stubt naar console zonder API-key)
 - Web Push met VAPID; PWA-manifest en service worker voor installeerbare
   app op desktop en telefoon
+- Foto-herkenning op `/foto`: upload van een doosfoto, OCR via Claude
+  Vision, lookup tegen Märklin/Roco/Fleischmann productpagina's,
+  hfkern.de (configureerbaar) en eBay-titels, bevestigingsscherm met
+  pre-filled ItemForm. Zonder `ANTHROPIC_API_KEY` werkt de UI maar
+  vindt OCR niets — de gebruiker vult dan handmatig in
 
 ## Aan de slag
 
@@ -96,8 +102,6 @@ IMAP-client.
 
 ## Volgende fases (nog niet geïmplementeerd)
 
-- Fase 3: Foto-naar-artikelnummer (OCR + lookup tegen
-  Märklin/Roco/hfkern.de).
 - Fase 4-5: Treinsamenstellingen (Zugbildungspläne) extraheren en matchen
   tegen de collectie.
 - Fase 6: PWA-polish (offline cache, install prompt), donker thema,
