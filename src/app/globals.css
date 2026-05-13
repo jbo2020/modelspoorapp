@@ -4,6 +4,8 @@
 
 :root {
   color-scheme: light;
+  /* Paper-noise overlay — faint SVG turbulence layer voor editorial textuur */
+  --paper-noise: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%20200%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%271.6%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.045%200%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url(%23n)%27%2F%3E%3C%2Fsvg%3E");
 }
 
 html, body { height: 100%; }
@@ -19,7 +21,13 @@ h1, h2, h3 {
   font-weight: 500;
 }
 
-/* Tabular numbers for the technical/ledger feel everywhere it matters. */
+.font-display {
+  font-family: theme(fontFamily.serif);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+}
+
 .mono,
 .font-mono,
 .tabular {
@@ -27,8 +35,19 @@ h1, h2, h3 {
   font-variant-numeric: tabular-nums;
 }
 
+/* Paper-noise — laag bovenop achtergrond, niet-interactief, subtiel */
+.paper-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--paper-noise);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
 @layer components {
-  /* ---- Buttons ---- */
   .btn {
     @apply inline-flex items-center gap-1.5 rounded-sm px-3 py-2 text-xs font-medium
            border border-rule bg-white text-ink
@@ -47,12 +66,16 @@ h1, h2, h3 {
            bg-ink text-white border border-ink
            hover:bg-ink2 transition-colors;
   }
+  .btn-cream {
+    @apply inline-flex items-center gap-1.5 rounded-sm px-3 py-2 text-xs font-medium
+           bg-paper2 text-ink border border-rule
+           hover:bg-paper3 transition-colors;
+  }
   .btn-ghost {
     @apply inline-flex items-center gap-1.5 px-2 py-1.5 text-xs font-medium
            text-ink2 hover:text-ink transition-colors;
   }
 
-  /* ---- Form fields — flat, hairline, technical ---- */
   .input {
     @apply w-full rounded-none border border-line bg-white px-2.5 py-2 text-sm
            text-ink placeholder:text-faint
@@ -66,7 +89,6 @@ h1, h2, h3 {
     @apply block uppercase tracking-eyebrow text-[10px] font-medium text-muted mb-1.5;
   }
 
-  /* ---- Surfaces ---- */
   .card {
     @apply bg-white border border-line;
   }
@@ -76,55 +98,58 @@ h1, h2, h3 {
   .panel {
     @apply bg-white border border-line p-4;
   }
+  .panel-cream {
+    @apply bg-paper2 border border-rule p-4;
+  }
 
-  /* ---- Chips ---- */
   .chip {
     @apply inline-flex items-center gap-1 px-2 py-1 text-[11px]
            border border-line bg-white text-ink2
            whitespace-nowrap;
     letter-spacing: 0.02em;
   }
-  .chip-paper {
-    @apply chip bg-paper2 border-transparent;
-  }
-  .chip-mono {
-    @apply chip font-mono tracking-wide text-[11px];
-  }
-  .chip-red {
-    @apply chip bg-sbb/10 text-sbb border-sbb/30;
-  }
-  .chip-green {
-    @apply chip bg-accentGreen/10 text-accentGreen border-accentGreen/30;
-  }
-  .chip-ink {
-    @apply chip bg-ink text-white border-ink;
-  }
-  .chip-ghost {
-    @apply chip bg-transparent text-muted border-line;
-  }
+  .chip-paper { @apply chip bg-paper2 border-transparent; }
+  .chip-mono { @apply chip font-mono tracking-wide text-[11px]; }
+  .chip-red { @apply chip bg-sbb/10 text-sbb border-sbb/30; }
+  .chip-green { @apply chip bg-accentGreen/10 text-accentGreen border-accentGreen/30; }
+  .chip-ochre { @apply chip bg-ochre/15 text-ochre border-ochre/30; }
+  .chip-ink { @apply chip bg-ink text-white border-ink; }
+  .chip-ghost { @apply chip bg-transparent text-muted border-line; }
 
-  /* ---- Type ---- */
   .eyebrow {
     @apply uppercase tracking-eyebrow text-[10px] font-medium text-muted;
+  }
+  .eyebrow-rule {
+    @apply flex items-center gap-2.5 uppercase tracking-eyebrowWide text-[10px] font-medium text-muted;
+  }
+  .eyebrow-rule::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: theme(colors.ink);
+    display: inline-block;
   }
   .section-label {
     @apply flex items-baseline justify-between gap-3
            border-b border-rule pb-2 mb-3.5
-           uppercase tracking-eyebrow text-[10px] font-medium text-muted;
+           uppercase tracking-eyebrowWide text-[10px] font-medium text-muted;
   }
 
-  /* ---- Stat-cell ---- */
   .stat {
-    @apply flex-1 min-w-0 px-4 py-3.5 border-r border-line last:border-r-0;
+    @apply flex-1 min-w-0 px-4 py-4 border-r border-line last:border-r-0;
   }
   .stat-label {
-    @apply eyebrow mb-1.5 text-[10px];
+    @apply eyebrow mb-2 text-[10px];
   }
   .stat-value {
-    @apply font-mono text-2xl leading-none tabular text-ink font-medium;
+    @apply font-serif text-[34px] leading-none text-ink font-normal;
+    letter-spacing: -0.025em;
+  }
+  .stat-value-mono {
+    @apply font-mono text-[28px] leading-none tabular text-ink font-medium;
   }
   .stat-sub {
-    @apply text-[11px] text-muted mt-1.5;
+    @apply text-[11px] text-muted mt-2;
   }
 
   .empty-state {
@@ -133,5 +158,17 @@ h1, h2, h3 {
   }
   .skeleton {
     @apply animate-pulse bg-line/60;
+  }
+
+  /* Drop-cap voor editorial paragrafen */
+  .drop-cap::first-letter {
+    font-family: theme(fontFamily.serif);
+    font-size: 44px;
+    line-height: 0.85;
+    float: left;
+    margin-right: 6px;
+    margin-top: 4px;
+    color: theme(colors.ink);
+    font-weight: 400;
   }
 }

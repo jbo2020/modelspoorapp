@@ -5,22 +5,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Surfaces — warmed cream, technical archive feel
-        paper: "#F4EEE2",
-        paper2: "#EBE3D2",
+        // Surfaces — pushed cream, editorial archive feel (Redesign v2)
+        paper: "#F1EADA",
+        paper2: "#E5DBC2",
+        paper3: "#D7CBAE",
         surface: "#FFFFFF",
-        ink: "#16181C",
-        ink2: "#3C3D42",
-        muted: "#807A6F",
+        ink: "#0F1115",
+        ink2: "#3A3C42",
+        muted: "#7A7466",
         faint: "#B5AC9C",
-        line: "#E1D9C8",
-        rule: "#D6CCB7",
+        line: "#DDD4BE",
+        rule: "#CDC1A4",
 
-        // Accent + status
-        sbb: "#D0091F",
-        sbbDim: "#A50817",
-        accentGreen: "#1F7A4D",
-        accentYellow: "#B57E0E",
+        sbb: "#C5051C",
+        sbbDim: "#8E0414",
+        accentGreen: "#1C6B43",
+        accentYellow: "#A87206",
+        ochre: "#B68D2D",
 
         dark: {
           bg: "#1A1A1C",
@@ -30,17 +31,34 @@ const config: Config = {
           line: "#2C2C30",
         },
 
-        // Era band (Zwitserse tijdperken) — versterkte palette
+        // Era band — pushed for richer use
         era: {
-          1: "#7B5E3A",
-          2: "#9A7544",
-          3: "#B58A57",
-          4: "#6E7E84",
-          5: "#48708A",
-          6: "#2E5F7F",
+          1: "#6B4F2E",
+          2: "#8C6635",
+          3: "#B0823F",
+          4: "#566C77",
+          5: "#345D77",
+          6: "#1F4A66",
+        },
+        // Era tints — pale fills voor EraBadge backgrounds
+        eraTint: {
+          1: "#EEDFC4",
+          2: "#EBD8B6",
+          3: "#EFD3A1",
+          4: "#D8DEE0",
+          5: "#C8D5DE",
+          6: "#B8CADA",
         },
       },
       fontFamily: {
+        serif: [
+          "var(--font-serif)",
+          '"Instrument Serif"',
+          '"Cormorant Garamond"',
+          "Georgia",
+          '"Times New Roman"',
+          "serif",
+        ],
         sans: [
           '"Helvetica Neue"',
           "Helvetica",
@@ -64,7 +82,8 @@ const config: Config = {
       },
       maxWidth: { app: "1320px" },
       letterSpacing: {
-        eyebrow: "0.16em",
+        eyebrow: "0.18em",
+        eyebrowWide: "0.24em",
       },
     },
   },

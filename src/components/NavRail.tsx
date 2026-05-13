@@ -96,14 +96,19 @@ export default function NavRail() {
           <Link
             key={it.id}
             href={it.href}
-            className={`flex items-center gap-2.5 py-2 pl-3 pr-2 -ml-2 text-[13px] transition-colors ${
+            className={`flex items-center gap-2.5 py-2.5 pl-3.5 pr-3 -ml-3 text-[13px] transition-colors ${
               on
-                ? "text-ink bg-paper border-l-2 border-l-sbb font-medium"
+                ? "text-ink bg-white border-l-2 border-l-sbb font-medium"
                 : "text-ink2 hover:text-ink border-l-2 border-l-transparent"
             }`}
           >
             <span className={on ? "text-ink" : "text-muted"}>{it.icon}</span>
             <span>{it.label}</span>
+            {on && (
+              <span aria-hidden className="ml-auto text-muted text-[10px]">
+                ›
+              </span>
+            )}
           </Link>
         );
       })}

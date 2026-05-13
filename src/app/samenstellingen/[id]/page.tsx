@@ -70,26 +70,67 @@ export default async function SamenstellingDetailPage({
   const gematchteIds = new Set(matches.map((m) => m.positieId));
   const eersteTreindienst = type.treindiensten[0];
   const titel = treinTitel(eersteTreindienst, type);
+  const ontbreken = type.aantalPosities - gematchteIds.size;
 
   return (
     <div>
       <PageHeader
-        eyebrow={
-          type.lokSerie
-            ? `Samenstelling · ${type.lokSerie}`
-            : "Samenstelling"
-        }
+        eyebrow={`Samenstelling · ${type.lokSerie ?? "rake"} · ${type.aantalPosities} posities`}
         title={titel}
-        actions={
-          <div className="text-right">
-            <div className="font-mono text-2xl tabular leading-none text-ink">
-              {gematchteIds.size}
-              <span className="text-muted">/{type.aantalPosities}</span>
-            </div>
-            <div className="eyebrow mt-1">posities gematcht</div>
-          </div>
+        lede={
+          ontbreken === 0
+            ? `Alle ${type.aantalPosities} posities zijn gedekt door je collectie.`
+            : ontbreken === type.aantalPosities
+            ? `Nog geen enkele positie van deze rake zit in je collectie. ${
+                eersteTreindienst?.routeVan && eersteTreindienst.routeNaar
+                  ? `${eersteTreindienst.routeVan} → ${eersteTreindienst.routeNaar}.`
+                  : ""
+              }`
+            : `${gematchteIds.size} van de ${type.aantalPosities} posities zijn gedekt; ${ontbreken} ${
+                ontbreken === 1 ? "positie ontbreekt" : "posities ontbreken"
+              } nog.`
         }
       />
+
+      {/* DEKKING band — donker, full-bleed, editorial */}
+      <section className="-mx-6 sm:-mx-9 mb-7 px-6 sm:px-9 py-7 bg-ink text-white">
+        <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-8 items-center">
+          <div className="font-serif leading-[0.85] tracking-[-0.04em] flex items-baseline gap-1">
+            <span className="text-[88px] sm:text-[110px] font-normal">
+              {gematchteIds.size}
+            </span>
+            <span className="text-[88px] sm:text-[110px] font-normal text-white/30">
+              /{type.aantalPosities}
+            </span>
+          </div>
+          <div>
+            <div className="flex items-center gap-2.5 uppercase tracking-eyebrowWide text-[10px] text-white/55 font-medium">
+              <span aria-hidden className="inline-block w-3.5 h-px bg-white" />
+              Dekking in de collectie
+            </div>
+            <div className="font-serif text-[22px] sm:text-[26px] leading-tight tracking-[-0.025em] mt-2.5 max-w-[44ch]">
+              {ontbreken === 0
+                ? "Volledig gedekt — alles aanwezig."
+                : ontbreken === type.aantalPosities
+                ? "Nog geen onderdelen — een rake om te verzamelen."
+                : `Nog ${ontbreken} ${ontbreken === 1 ? "rijtuig" : "rijtuigen"} te gaan voor een volledige rake.`}
+            </div>
+            <div className="mt-5 flex gap-1 flex-wrap">
+              {type.posities.map((p) => (
+                <span
+                  key={p.id}
+                  className="block h-1.5 w-7"
+                  style={{
+                    background: gematchteIds.has(p.id)
+                      ? "#C5051C"
+                      : "rgba(255,255,255,0.16)",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-4 mb-6">
         {/* Hero — locomotief foto */}
