@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import SerieImage from "./SerieImage";
+import WagenFeatures from "./WagenFeatures";
 import { CATEGORIE_LABEL, type Categorie } from "@/lib/types";
 import type { Suggestie } from "@/lib/samenstelling/match";
 import {
@@ -72,11 +73,7 @@ export default function PositieRij(props: {
             </>
           )}
         </div>
-        {opmerking && (
-          <div className="text-[11px] text-muted italic mt-1 truncate">
-            {opmerking}
-          </div>
-        )}
+        <WagenFeatures opmerking={opmerking} />
       </div>
 
       <div className="min-w-0">

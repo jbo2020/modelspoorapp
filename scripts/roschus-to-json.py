@@ -99,10 +99,17 @@ def main() -> None:
     c = sqlite3.connect(src)
     c.row_factory = sqlite3.Row
 
-    legend = {
-        r["codepoint"]: r["description"]
-        for r in c.execute("SELECT codepoint, description FROM icon_legend")
-    }
+    # Alleen 'symbool'-iconen zijn echte wagen-features (Speisewagen,
+    # Schlafwagen, Panoramawagen, ...). Hinweiszahl/voetnoot/zuggattung/
+    # verkehrstag-glyphs filteren we weg uit de opmerking.
+    legend = {}
+    feature_codes = set()
+    for r in c.execute(
+        "SELECT codepoint, description, category FROM icon_legend"
+    ):
+        legend[r["codepoint"]] = r["description"]
+        if r["category"] == "symbool":
+            feature_codes.add(r["codepoint"])
 
     # Posities per compositie
     wagons: dict[int, list] = {}
@@ -113,9 +120,9 @@ def main() -> None:
         feats = []
         if r["glyphs_hex"]:
             for cp in r["glyphs_hex"].split(","):
-                d = legend.get(cp.strip())
-                if d:
-                    feats.append(d)
+                cp = cp.strip()
+                if cp in feature_codes:
+                    feats.append(legend[cp])
         wagons.setdefault(r["composition_id"], []).append(
             {
                 "positie": r["position"],

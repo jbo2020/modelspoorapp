@@ -58,6 +58,13 @@ async function main() {
           },
         });
       }
+      // Ververs ook de positie-opmerkingen (wagen-features) idempotent.
+      for (const p of t.posities) {
+        await prisma.samenstellingPositie.updateMany({
+          where: { typeId: row.id, positie: p.positie },
+          data: { opmerking: p.opmerking ?? null },
+        });
+      }
       typesBestond++;
     }
 
