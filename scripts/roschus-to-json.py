@@ -28,7 +28,22 @@ TREINSTEL_KINDS = {
     "TGVZR", "VT11.5", "RGP", "MC76", "RBe4/4", "RBe540", "ABDe535",
     "ABDe4/8", "BDe4/4", "RBDe4/4", "RVT", "DPZ", "Mistral69", "Mistral56",
     "RAm", "DACH", "RABDe", "SGP", "VT", "AD4hES", "D4hET", "B4hET",
+    "ICN", "ETR", "RABDe500", "RABe500", "RABe511", "RBe", "RBDe560",
+    "Flirt", "FLIRT", "Domino", "Kolibri", "GTW", "Astoro",
 }
+
+
+def treinstel_serie(label: str) -> str:
+    """Korte serie-naam voor een treinstel-label voor de lijst.
+    'SBB/NS TEE RAm500' -> 'TEE RAm'; 'SBB RABDe 500' -> 'RABDe 500'."""
+    lab = (label or "").strip()
+    m = re.search(
+        r"\b(TEE\s+RAm|RAm|RAe|RABDe\d*|RABe\d*|RBDe\d*|RBe\d*|ICN|ICE\s?\d?|"
+        r"ETR\s?\d*|TGV\w*|NPZ|FLIRT|GTW|Astoro|Mistral\d*|VT\s?11\.5)\b",
+        lab,
+        re.I,
+    )
+    return m.group(1).strip() if m else (lab.split(" ")[-1] if lab else lab)
 FREIGHT_KINDS = {
     "Hbiss-vv", "Hbiss", "Hbis", "Hbis-vv", "Hbiqss", "Ibpss-vv", "Gqss",
     "DDm", "B4Dd", "Bm(fac)",
@@ -45,7 +60,12 @@ ZUGGATTUNG = {
 def categorie(kind: str | None, label: str) -> str:
     k = (kind or "").strip()
     lab = label or ""
-    if k in TREINSTEL_KINDS or re.search(r"\b(RAe|RABe|RABDe|RBe|RBDe|NPZ|ICN|ICE|TGV|ETR|FLIRT|RAm|VT11)\b", lab):
+    if k in TREINSTEL_KINDS or re.search(
+        r"\b(RAe|RABe|RABDe|RBe|RBDe|NPZ|ICN|ICE|ETR|FLIRT|RAm|GTW|Astoro|"
+        r"Domino|Kolibri)\d*|\bTGV\w*|\bVT\s?11",
+        lab,
+        re.I,
+    ):
         return "TREINSTEL"
     if k in FREIGHT_KINDS:
         return "GOEDERENWAGON"
@@ -151,12 +171,25 @@ def main() -> None:
         pos = wagons.get(cid, [])
         if not pos:
             continue
+        # lokSerie-fallbackketen:
+        #   1) traction-veld van de compositie
+        #   2) eerste LOCOMOTIEF-positie
+        #   3) eerste TREINSTEL-positie -> korte serie ("TEE RAm", "ICN")
+        #   4) None
         lok = comp["traction"]
         if not lok:
             loco = next(
                 (p for p in pos if p["vereistCategorie"] == "LOCOMOTIEF"), None
             )
-            lok = loco["vereistSerie"] if loco else None
+            if loco:
+                lok = loco["vereistSerie"]
+            else:
+                trein = next(
+                    (p for p in pos if p["vereistCategorie"] == "TREINSTEL"),
+                    None,
+                )
+                if trein and trein["vereistSerie"]:
+                    lok = treinstel_serie(trein["vereistSerie"])
         klassen = sorted(
             {
                 p["vereistKlasse"]

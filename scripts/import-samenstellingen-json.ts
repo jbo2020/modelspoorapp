@@ -41,6 +41,23 @@ async function main() {
       });
       typesNieuw++;
     } else {
+      // Idempotent verversen van afgeleide metadata zodat verbeterde
+      // heuristieken (lokSerie/totaalKlasse/omschrijving) doorwerken
+      // zonder de posities of matches te raken.
+      if (
+        row.lokSerie !== t.lokSerie ||
+        row.totaalKlasse !== t.totaalKlasse ||
+        row.omschrijving !== t.omschrijving
+      ) {
+        await prisma.samenstellingstype.update({
+          where: { id: row.id },
+          data: {
+            lokSerie: t.lokSerie,
+            totaalKlasse: t.totaalKlasse,
+            omschrijving: t.omschrijving,
+          },
+        });
+      }
       typesBestond++;
     }
 

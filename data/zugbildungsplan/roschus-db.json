@@ -3,13 +3,13 @@
     "signatuur": "rb:7602c1975826",
     "omschrijving": null,
     "aantalPosities": 1,
-    "lokSerie": null,
+    "lokSerie": "RAm500",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
       {
         "positie": 1,
-        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistCategorie": "TREINSTEL",
         "vereistSerie": "SBB/NS TEE RAm500",
         "vereistKlasse": "1/2",
         "vereistRijtuignummer": null,
@@ -463,7 +463,7 @@
     "signatuur": "rb:99f204e8eac4",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "2720",
     "totaalKlasse": null,
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -575,7 +575,7 @@
     "signatuur": "rb:a3c0c6290fc6",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "2770",
     "totaalKlasse": null,
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -687,7 +687,7 @@
     "signatuur": "rb:2a4a1aebb444",
     "omschrijving": null,
     "aantalPosities": 8,
-    "lokSerie": null,
+    "lokSerie": "VT11.5",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -843,7 +843,7 @@
     "signatuur": "rb:77df3f6f4806",
     "omschrijving": null,
     "aantalPosities": 8,
-    "lokSerie": null,
+    "lokSerie": "VT11.5",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1299,7 +1299,7 @@
     "signatuur": "rb:2a3a89f9f3a1",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "4130",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1373,7 +1373,7 @@
     "signatuur": "rb:5bf02ad1831c",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "4130",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1447,7 +1447,7 @@
     "signatuur": "rb:890f35eee50d",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1639,7 +1639,7 @@
     "signatuur": "rb:6391ba910499",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1831,7 +1831,7 @@
     "signatuur": "rb:20cb3f9be65e",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "4130",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1885,7 +1885,7 @@
     "signatuur": "rb:fda1426e6d35",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "4130",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1939,7 +1939,7 @@
     "signatuur": "rb:12d600cd6ca7",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "7770",
     "totaalKlasse": null,
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -1977,7 +1977,7 @@
     "signatuur": "rb:0a4bfc8bb98a",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "2770",
     "totaalKlasse": null,
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -2015,7 +2015,7 @@
     "signatuur": "rb:81ef3c9676d0",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "4130",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -2079,7 +2079,7 @@
     "signatuur": "rb:40a5d5022cfb",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "4130",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -2143,7 +2143,7 @@
     "signatuur": "rb:f7bc7975c0ad",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "7770",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -2165,7 +2165,7 @@
       },
       {
         "positie": 3,
-        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistCategorie": "TREINSTEL",
         "vereistSerie": "SBB/NS TEE RAm500",
         "vereistKlasse": "1/2",
         "vereistRijtuignummer": null,
@@ -2197,7 +2197,7 @@
     "signatuur": "rb:e7f9971e7314",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "2770",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -2219,7 +2219,7 @@
       },
       {
         "positie": 3,
-        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistCategorie": "TREINSTEL",
         "vereistSerie": "SBB/NS TEE RAm500",
         "vereistKlasse": "1/2",
         "vereistRijtuignummer": null,
@@ -2515,7 +2515,7 @@
     "signatuur": "rb:8d7c560ae2f2",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "6010",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -2655,7 +2655,7 @@
     "signatuur": "rb:36848221130e",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "4010",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -3411,7 +3411,7 @@
     "signatuur": "rb:81f2a19bf513",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -3481,7 +3481,7 @@
     "signatuur": "rb:fc31b9c26550",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -4023,7 +4023,7 @@
     "signatuur": "rb:1bad8d880045",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -7349,7 +7349,7 @@
     "posities": [
       {
         "positie": 1,
-        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistCategorie": "TREINSTEL",
         "vereistSerie": "SBB/NS TEE RAm500",
         "vereistKlasse": "1/2",
         "vereistRijtuignummer": null,
@@ -7411,7 +7411,7 @@
     "posities": [
       {
         "positie": 1,
-        "vereistCategorie": "PERSONENRIJTUIG",
+        "vereistCategorie": "TREINSTEL",
         "vereistSerie": "SBB/NS TEE RAm500",
         "vereistKlasse": "1/2",
         "vereistRijtuignummer": null,
@@ -11791,7 +11791,7 @@
     "signatuur": "rb:055971c50e33",
     "omschrijving": null,
     "aantalPosities": 11,
-    "lokSerie": null,
+    "lokSerie": "4010",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -11901,7 +11901,7 @@
     "signatuur": "rb:7cbaa9e818e4",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "6010",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -13091,7 +13091,7 @@
     "signatuur": "rb:3c4a726e5cf3",
     "omschrijving": null,
     "aantalPosities": 11,
-    "lokSerie": null,
+    "lokSerie": "4010",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -13221,7 +13221,7 @@
     "signatuur": "rb:2d3b544f5151",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "6010",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -16139,7 +16139,7 @@
     "signatuur": "rb:13607647b920",
     "omschrijving": null,
     "aantalPosities": 7,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -16277,7 +16277,7 @@
     "signatuur": "rb:5d798216cac3",
     "omschrijving": null,
     "aantalPosities": 7,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -16415,7 +16415,7 @@
     "signatuur": "rb:e1f73f6a7c0b",
     "omschrijving": null,
     "aantalPosities": 1,
-    "lokSerie": null,
+    "lokSerie": "ABDe4/8",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -18233,7 +18233,7 @@
     "signatuur": "rb:00c4f82b7386",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -18351,7 +18351,7 @@
     "signatuur": "rb:e08d2f5f1f94",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -19503,7 +19503,7 @@
     "signatuur": "rb:c004dfddf95f",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -19815,7 +19815,7 @@
     "signatuur": "rb:1f7b64a24add",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -19933,7 +19933,7 @@
     "signatuur": "rb:822c3dff5631",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -21279,7 +21279,7 @@
     "signatuur": "rb:986ef885e7c0",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -21573,7 +21573,7 @@
     "signatuur": "rb:120d54fcd92e",
     "omschrijving": null,
     "aantalPosities": 10,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -22005,7 +22005,7 @@
     "signatuur": "rb:b065f071271f",
     "omschrijving": null,
     "aantalPosities": 10,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -22397,7 +22397,7 @@
     "signatuur": "rb:cec72706a87a",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -22781,7 +22781,7 @@
     "signatuur": "rb:7ba977957389",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -22919,7 +22919,7 @@
     "signatuur": "rb:a438a0671d52",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -28633,7 +28633,7 @@
     "signatuur": "rb:50e769e50fce",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -28761,7 +28761,7 @@
     "signatuur": "rb:73069b0f186f",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RAe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -30531,7 +30531,7 @@
     "signatuur": "rb:14b4f7c96580",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -30855,7 +30855,7 @@
     "signatuur": "rb:7304a5207c38",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -31039,7 +31039,7 @@
     "signatuur": "rb:25e30b2d4667",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -31321,7 +31321,7 @@
     "signatuur": "rb:a7f85c3a921f",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -31367,7 +31367,7 @@
     "signatuur": "rb:7b282fb8cff5",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -31523,7 +31523,7 @@
     "signatuur": "rb:883c234f698a",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -31591,7 +31591,7 @@
     "signatuur": "rb:5929283a43e7",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -33171,7 +33171,7 @@
     "signatuur": "rb:cbe804e56772",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -33345,7 +33345,7 @@
     "signatuur": "rb:71a1023a17b6",
     "omschrijving": null,
     "aantalPosities": 17,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -42515,7 +42515,7 @@
     "signatuur": "rb:8216f418f667",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -42787,7 +42787,7 @@
     "signatuur": "rb:f1dad1a138cd",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -42921,7 +42921,7 @@
     "signatuur": "rb:70da9f469b60",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -43589,7 +43589,7 @@
     "signatuur": "rb:36ef5eec8360",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "BDe4/4",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -44533,7 +44533,7 @@
     "signatuur": "rb:81b3da9b59e4",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -45729,7 +45729,7 @@
     "signatuur": "rb:2473ca5923b7",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RABe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -45877,7 +45877,7 @@
     "signatuur": "rb:26c4f14e7e51",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RABe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -57033,7 +57033,7 @@
     "signatuur": "rb:4a9ca8275010",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -57115,7 +57115,7 @@
     "signatuur": "rb:bcdf19af4453",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -57233,7 +57233,7 @@
     "signatuur": "rb:40ade1b0fddf",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -57957,7 +57957,7 @@
     "signatuur": "rb:036d4e58c11f",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -58237,7 +58237,7 @@
     "signatuur": "rb:52f974077c3b",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RABe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -58417,7 +58417,7 @@
     "signatuur": "rb:4eeb974bb409",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RABe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -58607,7 +58607,7 @@
     "signatuur": "rb:bcff09313dde",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RABe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -104731,7 +104731,7 @@
     "signatuur": "rb:9f6b67dc3322",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -104911,7 +104911,7 @@
     "signatuur": "rb:6475a33339c9",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -105167,7 +105167,7 @@
     "signatuur": "rb:39be4f683b3a",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "RBDe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -105223,7 +105223,7 @@
     "signatuur": "rb:a59f37c5ba3a",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -105641,7 +105641,7 @@
     "signatuur": "rb:f33a464b9eca",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -105735,7 +105735,7 @@
     "signatuur": "rb:ff04f0ca2121",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -105819,7 +105819,7 @@
     "signatuur": "rb:7982c17064e6",
     "omschrijving": null,
     "aantalPosities": 10,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -106125,7 +106125,7 @@
     "signatuur": "rb:7dfab8b9919d",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -106219,7 +106219,7 @@
     "signatuur": "rb:dcbb9ea51960",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -106289,7 +106289,7 @@
     "signatuur": "rb:2ed41f97eac6",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -106383,7 +106383,7 @@
     "signatuur": "rb:d50001386da6",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109371,7 +109371,7 @@
     "signatuur": "rb:f3e5e4a1e26c",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "Bt",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109419,7 +109419,7 @@
     "signatuur": "rb:88c959dabaa6",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "B",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109467,7 +109467,7 @@
     "signatuur": "rb:47fa810b2c59",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109513,7 +109513,7 @@
     "signatuur": "rb:d5b713614464",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109559,7 +109559,7 @@
     "signatuur": "rb:ef875c28061d",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "Bt",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109607,7 +109607,7 @@
     "signatuur": "rb:c2d600b0e67c",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "B",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -109727,7 +109727,7 @@
     "signatuur": "rb:08de43622f63",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "BDe4/4",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -110895,7 +110895,7 @@
     "signatuur": "rb:ce99ac4c33d6",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -111061,7 +111061,7 @@
     "signatuur": "rb:7a39ca6b40f6",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -111227,7 +111227,7 @@
     "signatuur": "rb:153388c8759b",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -152365,7 +152365,7 @@
     "signatuur": "rb:6c98ac766563",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -152459,7 +152459,7 @@
     "signatuur": "rb:0643753d3e36",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -152513,7 +152513,7 @@
     "signatuur": "rb:c1dd86226a7e",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -153617,7 +153617,7 @@
     "signatuur": "rb:7d603a85444e",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "RBe4",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -155935,7 +155935,7 @@
     "signatuur": "rb:8b30f5d3532d",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -156153,7 +156153,7 @@
     "signatuur": "rb:1f6b39d908bd",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "BDe4/4",
     "totaalKlasse": "2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -157955,7 +157955,7 @@
     "signatuur": "rb:e419554c70d9",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -158121,7 +158121,7 @@
     "signatuur": "rb:b5f9d51f8765",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -158287,7 +158287,7 @@
     "signatuur": "rb:6ade43dd5f8f",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -158453,7 +158453,7 @@
     "signatuur": "rb:b7f5feb7c978",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -159091,7 +159091,7 @@
     "signatuur": "rb:9cd4c88cdf87",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "RABe",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -196611,7 +196611,7 @@
     "signatuur": "rb:279316329e65",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -196795,7 +196795,7 @@
     "signatuur": "rb:f8ae7aa81216",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -196971,7 +196971,7 @@
     "signatuur": "rb:466e14b80b39",
     "omschrijving": null,
     "aantalPosities": 9,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -197341,7 +197341,7 @@
     "signatuur": "rb:42b7002e6dfa",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -197529,7 +197529,7 @@
     "signatuur": "rb:5017c28e8968",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -197687,7 +197687,7 @@
     "signatuur": "rb:4f44c7ea2641",
     "omschrijving": null,
     "aantalPosities": 14,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -197841,7 +197841,7 @@
     "signatuur": "rb:c3655cce5289",
     "omschrijving": null,
     "aantalPosities": 14,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -201539,7 +201539,7 @@
     "signatuur": "rb:68dedc5c8926",
     "omschrijving": null,
     "aantalPosities": 12,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -254153,7 +254153,7 @@
     "signatuur": "rb:d3010a42f911",
     "omschrijving": null,
     "aantalPosities": 8,
-    "lokSerie": null,
+    "lokSerie": "RBe540",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -255827,7 +255827,7 @@
     "signatuur": "rb:04018a4121ae",
     "omschrijving": null,
     "aantalPosities": 18,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -287657,7 +287657,7 @@
     "signatuur": "rb:17afddaa18fa",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -287853,7 +287853,7 @@
     "signatuur": "rb:bdb78dcc7d02",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -291559,7 +291559,7 @@
     "signatuur": "rb:f7fc9c698e38",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -291683,7 +291683,7 @@
     "signatuur": "rb:7d69a40eb6dd",
     "omschrijving": null,
     "aantalPosities": 7,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -291761,7 +291761,7 @@
     "signatuur": "rb:05bc61ffe221",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -291843,7 +291843,7 @@
     "signatuur": "rb:dfd3ac62ceb9",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -291925,7 +291925,7 @@
     "signatuur": "rb:0d92f09222a6",
     "omschrijving": null,
     "aantalPosities": 7,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292003,7 +292003,7 @@
     "signatuur": "rb:de32f093b264",
     "omschrijving": null,
     "aantalPosities": 6,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292073,7 +292073,7 @@
     "signatuur": "rb:40fa761f31a9",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292127,7 +292127,7 @@
     "signatuur": "rb:e4db768fce08",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292181,7 +292181,7 @@
     "signatuur": "rb:1627d9ea5b3d",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292235,7 +292235,7 @@
     "signatuur": "rb:bd16ddfa2d5c",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292691,7 +292691,7 @@
     "signatuur": "rb:2513bc00169f",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -292865,7 +292865,7 @@
     "signatuur": "rb:f4501e550510",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -293039,7 +293039,7 @@
     "signatuur": "rb:625ae359190a",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -293213,7 +293213,7 @@
     "signatuur": "rb:9f57908cf636",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -293387,7 +293387,7 @@
     "signatuur": "rb:53bcd7b51b51",
     "omschrijving": null,
     "aantalPosities": 19,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -293561,7 +293561,7 @@
     "signatuur": "rb:2f6f132373cc",
     "omschrijving": null,
     "aantalPosities": 14,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -293725,7 +293725,7 @@
     "signatuur": "rb:2499387b7c9d",
     "omschrijving": null,
     "aantalPosities": 14,
-    "lokSerie": null,
+    "lokSerie": "ICE 1",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -299417,7 +299417,7 @@
     "signatuur": "rb:0f660bafbb04",
     "omschrijving": null,
     "aantalPosities": 8,
-    "lokSerie": null,
+    "lokSerie": "TGV",
     "totaalKlasse": "1+1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -315351,7 +315351,7 @@
     "signatuur": "rb:2e13da2bd927",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "RBe540",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -326529,7 +326529,7 @@
     "signatuur": "rb:79ab66a2c8a5",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -326591,7 +326591,7 @@
     "signatuur": "rb:82e4b8b3c00d",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -326843,7 +326843,7 @@
     "signatuur": "rb:50a4a4aaa951",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327019,7 +327019,7 @@
     "signatuur": "rb:9091574597bb",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327077,7 +327077,7 @@
     "signatuur": "rb:ca7e9ff6f9a1",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327159,7 +327159,7 @@
     "signatuur": "rb:9c513f6df861",
     "omschrijving": null,
     "aantalPosities": 2,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327197,7 +327197,7 @@
     "signatuur": "rb:0f595c90e79c",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327269,7 +327269,7 @@
     "signatuur": "rb:3d6e3118c6be",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327331,7 +327331,7 @@
     "signatuur": "rb:e5d4a333beaf",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -327403,7 +327403,7 @@
     "signatuur": "rb:6d5fc4ce1042",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -328423,7 +328423,7 @@
     "signatuur": "rb:80f2064f3bcf",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340237,7 +340237,7 @@
     "signatuur": "rb:61793a3549d6",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340283,7 +340283,7 @@
     "signatuur": "rb:b62f3de368bd",
     "omschrijving": null,
     "aantalPosities": 3,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340329,7 +340329,7 @@
     "signatuur": "rb:c60f49271dee",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340529,7 +340529,7 @@
     "signatuur": "rb:5413dd960d2b",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340583,7 +340583,7 @@
     "signatuur": "rb:b0908d7701c5",
     "omschrijving": null,
     "aantalPosities": 1,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340673,7 +340673,7 @@
     "signatuur": "rb:731e64c20256",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340765,7 +340765,7 @@
     "signatuur": "rb:e89830a7be89",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340847,7 +340847,7 @@
     "signatuur": "rb:2867c4e7b61a",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "ABDe535",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340919,7 +340919,7 @@
     "signatuur": "rb:cbe58c1d8f03",
     "omschrijving": null,
     "aantalPosities": 5,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -340981,7 +340981,7 @@
     "signatuur": "rb:e873687ff9ae",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
@@ -341045,7 +341045,7 @@
     "signatuur": "rb:16b11a783170",
     "omschrijving": null,
     "aantalPosities": 4,
-    "lokSerie": null,
+    "lokSerie": "NPZ",
     "totaalKlasse": "1/2+2",
     "eersteBron": "Röschus Zugbildungsplan (DB-import)",
     "posities": [
