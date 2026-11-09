@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { signIn, auth } from "@/lib/auth";
+import { LogoMark } from "@/components/Logo";
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +29,7 @@ export default async function LoginPage({
   const next = searchParams.next ?? "/";
   return (
     <div className="max-w-sm mx-auto mt-16">
+      <LogoMark size={56} className="mb-5" title="Modelspoor Collectie" />
       <h1 className="text-2xl font-semibold mb-1">Aanmelden</h1>
       <p className="text-sm text-muted mb-6">
         Modelspoor Collectie. Eén gebruiker, maar wel met login om de data te

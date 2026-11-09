@@ -26,7 +26,13 @@ export const metadata: Metadata = {
   title: "Modelspoor Collectie",
   description: "Persoonlijk beheer van een Zwitserse modelspoorverzameling.",
   manifest: "/manifest.json",
-  icons: [{ rel: "icon", url: "/icons/icon.svg", type: "image/svg+xml" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+  },
   appleWebApp: {
     capable: true,
     title: "Modelspoor",
