@@ -5,6 +5,7 @@
 
 import { signOut } from "@/lib/auth";
 import NavRail from "./NavRail";
+import { LogoMark } from "./Logo";
 
 export default function Frame({
   email,
@@ -17,13 +18,16 @@ export default function Frame({
     <div className="paper-noise relative w-full min-h-screen grid grid-cols-1 sm:grid-cols-[236px_1fr] bg-paper">
       {/* Nav rail — cream + serif wordmark */}
       <aside className="bg-paper border-r border-rule flex flex-col px-4 py-6 sm:sticky sm:top-0 sm:h-screen relative z-10">
-        <div className="mb-8 pl-1">
-          <div className="font-serif text-[26px] leading-tight text-ink">
-            Modell&shy;bahn
-          </div>
-          <div className="eyebrow-rule mt-1.5">
-            <span>Collectie</span>
-            <span aria-hidden className="inline-block w-1 h-1 bg-sbb ml-1" />
+        <div className="mb-8 pl-1 flex items-center gap-3">
+          <LogoMark size={40} className="shrink-0" />
+          <div className="min-w-0">
+            <div className="font-serif text-[26px] leading-tight text-ink">
+              Modell&shy;bahn
+            </div>
+            <div className="eyebrow-rule mt-1.5">
+              <span>Collectie</span>
+              <span aria-hidden className="inline-block w-1 h-1 bg-sbb ml-1" />
+            </div>
           </div>
         </div>
 
